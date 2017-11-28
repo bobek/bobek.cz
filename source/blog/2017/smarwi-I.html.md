@@ -1,6 +1,7 @@
 ---
 title: Smarwi, Část I.
-category: electronics
+category: tinkering
+tags: iot, esp8266
 toc: true
 date: 2017-11-28
 ---
@@ -127,4 +128,3 @@ Z pohledu bastlíře je hlavní **pozitivum** nešifrované MQTT a možnost změ
 - umožnit zapnout šifrování v konfiguraci zařízení
 - zveřejnit popis zpráv, aby je člověk nemusel reverse-engineerovat. Aktuálně je popsáno pouze [HTTP API](https://vektiva.gitlab.io/vektivadocs/api/#api-pres-lokalni-sit). Ale i za to dávám pozitivní body!
 
-V druhém díle by rád zařízení rozebral o podíval se na kvalitu zpracování vnitřního mechanismu.
