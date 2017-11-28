@@ -1,0 +1,16 @@
+<% wrap_layout :wrap do %>
+  <div class="col justify gap-4 xl-col xl-gap-0">
+    <% if current_page.url == "/" %>
+      <h1 class="logo">
+        <%= image_tag 'logo.svg', alt: 'bobek.cz' %>
+      </h1>
+    <% else %>
+      <a href="/" class="logo">
+        <%= image_tag 'logo.svg', alt: 'bobek.cz' %>
+      </a>
+    <% end %>
+    <div class="col justify gap-4">
+      <%= yield %>
+    </div>
+  </div>
+<% end %>

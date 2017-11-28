@@ -1,0 +1,5 @@
+# Ignore bundler config
+/.bundle
+/build
+/.sass-cache
+/.cache

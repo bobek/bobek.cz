@@ -1,0 +1,51 @@
+---
+---
+<p class="article"><strong>Antonín Král</strong> &mdash; CTO at <a href="https://tech.showmax.com">Showmax</a>.</p>
+<p class="col gap-1 xl-row xl-gap-2 article top">
+  <span><a href="https://github.com/bobek">GitHub</a></span>
+  <span class="xl-only">&bull;</span>
+  <span><a href="https://twitter.com/kralant">Twitter</a></span>
+  <span class="xl-only">&bull;</span>
+  <span><a href="mailto:hello@bobek.cz">hello@bobek.cz</a></span>
+  <span class="xl-only">&bull;</span>
+  <span><a href="https://keybase.io/bobek">PGP Public</a></span>
+</p>
+
+<hr>
+
+<div class="article col gap-3 justify">
+  <h1>Projects</h1>
+  <p><a href="https://tech.showmax.com"><strong>Showmax</strong></a> is a video streaming business.</p>
+</div>
+
+<hr>
+
+<div class="col gap-3">
+  <h1>Blog Posts</h1>
+  <% page_articles.reject { |a| a.data.unlisted }[0..4].each do |article| %>
+    <a href="<%= article.url %>" class="row gap-2">
+      <span class="faded date"><%= article.date.strftime('%b %e') %></span>
+      <strong><%= article.title %></strong>
+    </a>
+  <% end %>
+  <a href="/blog" class="row gap-2">
+    <span class="faded date">&nbsp;</span>
+    <strong>More Posts...</strong>
+  </a>
+</div>
+
+
+<!--
+<hr>
+
+<div class="col gap-3">
+  <h1>Misc Notes</h1>
+  <% sitemap.resources.select {|r| r.destination_path =~ /^notes\//}.select {|r| r.data.published != false}.sort_by {|r| r.data.updated}.reverse.each do |resource| %>
+    <a href="<%= resource.url %>" class="row gap-2">
+      <span class="faded date"><%= resource.data.updated.strftime('%b %e') %></span>
+      <strong><%= resource.data.title %></strong>
+    </a>
+  <% end %>
+</div>
+-->
+

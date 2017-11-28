@@ -1,0 +1,12 @@
+---
+pageable: true
+---
+<h1>Browsing <%= category_longname category %> articles</h1>
+<div class="col gap-4">
+  <% page_articles.each do |article| %>
+    <a href="<%= article.url %>" class="row gap-2">
+      <span class="faded date"><%= article.date.strftime('%b %e') %></span>
+      <strong><%= article.title %></strong>
+    </a>
+  <% end %>
+</div>

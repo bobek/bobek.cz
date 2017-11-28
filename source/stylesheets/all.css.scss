@@ -1,0 +1,122 @@
+@import 'normalize';
+@import 'grid';
+@import 'syntax';
+
+$fg: #303030;
+
+$fg-faded: rgba($fg,0.4);
+html, body {
+  color: $fg;
+  background-color: #fff;
+  font-family: 'PT Serif', Times, serif;
+  font-size: 15px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: 100ms color linear, 100ms border-color linear;
+  &:hover {
+    color: #2691EF;
+  }
+}
+.article a {
+  border-bottom: 1px solid rgba($fg, 0.4);
+  &:hover {
+    border-bottom-color: rgba(#2691EF, 0.4);
+  }
+}
+h1, h2, strong {
+  font-size: 1rem;
+}
+blockquote {
+  border-left: 4px solid rgba($fg, 0.18);
+  padding-left: 1.65rem;
+}
+.article a { border-bottom: 1px solid rgba($fg, 0.4); }
+a, h1, h2, p, ul, ol, pre, hr, .logo, blockquote { margin: 0; }
+h2 { padding-top: 1.65rem; }
+
+.main {
+  max-width: 650px;
+  margin: 0 auto;
+  padding: 1rem;
+  @include desktop { padding: 6.5rem 1rem; }
+}
+
+.faded {
+  color: $fg-faded;
+  font-style: italic;
+  font-weight: bold;
+}
+
+p, ul, ol, h1, h2 { line-height: 1.9; }
+ul, ol { padding-left: 1.5em; }
+.footnotes { font-size: 0.9em; }
+.footnotes li { margin-top: 1rem; }
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+
+.logo {
+  display: block;
+  border-bottom: none;
+  width: 66px;
+  @include desktop {
+    position: absolute;
+    right: 100%;
+    top: 2px;
+    margin-right: 1.65rem;
+  }
+}
+a.logo {
+  opacity: 0.3;
+  transition: 100ms opacity linear;
+  &:hover { opacity: 1; }
+}
+.logo.for-article {
+  @include desktop {
+    bottom: 4px;
+    top: auto;
+  }
+}
+
+pre {
+  padding: 1rem 0;
+  line-height: 1.6;
+  border: 1px dashed rgba($fg, 0.18);
+  border-width: 1px 0;
+}
+code {
+  padding: 0.2em 0.3em;
+  background-color: #f6f6f6;
+  font-family: Monaco, "Source Code Pro", monospace;
+  font-size: 0.85rem;
+}
+pre>code { background-color: transparent; padding: 0; }
+a>code {
+  border-bottom: 1px solid mix(#2691EF, #f6f6f6, 40%);
+  // background-color: mix(#2691EF, #f8f8f8, 15%);
+}
+
+hr {
+  border: none;
+  border-top: 1px dashed rgba($fg, 0.18);
+}
+
+.date {
+  min-width: 60px;
+  text-align: right;
+}
+
+.contents {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  align-self: flex-start;
+  &>h2 {
+    padding: 0;
+  }
+}

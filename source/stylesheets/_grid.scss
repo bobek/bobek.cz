@@ -1,0 +1,162 @@
+@mixin define-flexblocks($p, $spaces) {
+  // CORE
+  // Always use this
+  .#{$p}col,
+  .#{$p}row,
+  .#{$p}top,
+  .#{$p}left,
+  .#{$p}bottom,
+  .#{$p}right,
+  .#{$p}center,
+  .#{$p}middle,
+  .#{$p}justify,
+  .#{$p}vjustify {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+  }
+
+  // override space commands on different viewsizes
+  // wondering why we have these classes listed twice?
+  // we want it to have a priority of two classes, so that
+  // it can override the gap styles at different viewsizes,
+  // which also use two classes.
+  .#{$p}col.#{$p}col>* {
+    margin-left: 0;
+  }
+
+  .#{$p}row.#{$p}row>* {
+    margin-top: 0;
+  }
+
+  // TYPES
+  // Always use exactly one of these
+  .#{$p}col {
+    flex-direction: column;
+  }
+  .#{$p}row {
+    flex-direction: row;
+  }
+  // ALIGNMENT
+  // Use at most one vertical and one horizontal
+  .#{$p}top:not(.#{$p}row),
+  .#{$p}row.#{$p}left {
+    justify-content: flex-start;
+  }
+
+  .#{$p}bottom:not(.#{$p}row),
+  .#{$p}row.#{$p}right {
+    justify-content: flex-end;
+  }
+
+  .#{$p}middle:not(.#{$p}row),
+  .#{$p}row.#{$p}center {
+    justify-content: center;
+  }
+
+  .#{$p}vjustify:not(.#{$p}row),
+  .#{$p}row.#{$p}justify {
+    justify-content: space-between;
+  }
+
+  .#{$p}left:not(.#{$p}row),
+  .#{$p}row.#{$p}top {
+    align-items: flex-start;
+  }
+
+  .#{$p}right:not(.#{$p}row),
+  .#{$p}row.#{$p}bottom {
+    align-items: flex-end;
+  }
+
+  .#{$p}center:not(.#{$p}row),
+  .#{$p}row.#{$p}middle {
+    align-items: center;
+  }
+
+  .#{$p}justify:not(.#{$p}row),
+  .#{$p}row.#{$p}vjustify {
+    align-items: stretch;
+  }
+
+  // MARGIN PROPERTIES
+  // spaces children a certain amount away from each other
+  @for $i from 1 through length($spaces) {
+    $space: nth($spaces, $i);
+    .#{$p}col.#{$p}gap-#{$i} > * {
+      margin-top: $space;
+    }
+    .#{$p}row.#{$p}gap-#{$i} > * {
+      margin-left: $space;
+    }
+  }
+  .#{$p}col.#{$p}gap-0 > * {
+    margin-top: 0;
+  }
+  .#{$p}row.#{$p}gap-0 > * {
+    margin-left: 0;
+  }
+
+  .#{$p}row>*:first-child, .#{$p}col>*:first-child {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  // CHILD PROPERTIES
+  // fill makes flexbox ignore the content size of this el and just be that portion of
+  // the remaining space
+  @for $i from 1 through 6 {
+    .#{$p}fill-#{$i} { flex: $i 0 0; }
+  }
+  .#{$p}fill { @extend .#{$p}fill-1; }
+
+  // POP classes for popovers
+  .#{$p}pop-top, .#{$p}pop-bottom {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+  .#{$p}pop-bottom { top: 100%; }
+  .#{$p}pop-top { bottom: 100%; }
+
+  .#{$p}pop-left, .#{$p}pop-right {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+  .#{$p}pop-left { right: 100%; }
+  .#{$p}pop-right { left: 100%; }
+
+  // SPECIAL
+  .#{$p}page {
+    min-height: 100vh;
+  }
+
+  .#{$p}cover {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+}
+
+@include define-flexblocks("", 0.4rem 0.66rem 1rem 1.65rem 2.72rem);
+
+@mixin desktop {
+  @media only screen and (min-width: 875px) {
+    @content;
+  }
+}
+
+@media only screen and (max-width: 874px) {
+  .xl-only {
+    display: none;
+  }
+}
+
+@include desktop {
+  @include define-flexblocks(xl-, 0.4rem 0.66rem 1rem 1.65rem 2.72rem);
+}

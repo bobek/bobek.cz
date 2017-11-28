@@ -1,0 +1,29 @@
+<% wrap_layout :wrap do %>
+  <div class="col gap-4 justify">
+    <article class="col justify gap-4 justify">
+      <div class="col gap-4 xl-col xl-gap-0 justify">
+        <a href="/" class="logo for-article">
+          <%= image_tag 'logo.svg', alt: 'bobek.cz' %>
+        </a>
+        <div class="col gap-1">
+          <span class="faded"><%= current_article.date.strftime('%B %e, %Y') %></span>
+          <div class="col">
+            <h1><%= current_article.title%></h1>
+          </div>
+        </div>
+      </div>
+      <div class="col gap-3 justify article">
+        <% if current_article.data[:toc] %>
+          <%= insert_toc(current_article.body) %>
+        <% else %>
+          <%= current_article.body %>
+        <% end %>
+      </div>
+    </article>
+    <hr>
+    <div class="faded col gap-2 xl-center xl-row xl-gap-4">
+      <a href="/blog">&larr; blog archive</a>
+      <a href="https://twitter.com/kralant">follow @kralant for new posts</a>
+    </div>
+  </div>
+<% end %>
