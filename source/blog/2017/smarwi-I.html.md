@@ -8,7 +8,8 @@ date: 2017-11-28
 
 Podlehl jsem impulznímu nákupnímu rozhodnutí a pořídil [smarwi](https://vektiva.com/shop/smarwi). Celou akci spustil [Petr Stehlík](https://plus.google.com/+PetrStehl%C3%ADk/posts/bEiaeUeqkHU), který postnul link na recenzi produktu serverem [Geniální dům](http://www.genialnidum.cz/recenze-smarwi-automaticke-otevirani-oken/). Recenze na serveru ``genialnidum.cz`` je pěkně napsaná z uživatelského pohledu. Proto se na produkt zaměřím spíš optikou bastlíře a stůjce [několika](https://tech.showmax.com) Internetových [businessů](https://www.recombee.com).
 
-> Editováno 2017-11-29: přidána část o uchycení a ručním použití
+> Editováno 2017-11-29 (ráno): přidána část o uchycení a ručním použití
+> Editováno 2017-11-29 (věčer): přidána část o vnitřním provedení
 
 ## Balení a setup
 
@@ -46,6 +47,18 @@ Pokud je potřeba rychle pohnout s oknem (aka bouřka) jsou dvě možnosti:
 2. uživatel může jednou rukou odtlačit hřeben doprava, tím jej vyhákne ze zubů na hřídeli motoru a okno je opět volné.
 
 Pokud chcete okno otevřít dokořán, nic v tom nebrání (mimo případnou motorovou brzdu). Stačí tedy použít některý z postupů výše.
+
+### Vnitřek
+
+Samozřejmě jsem to nemohl vydžet moc dlouho a smarwi jsem kuchnul. Nejvíc asi napoví [fotografie](https://drive.google.com/drive/folders/1F_OGTq2zFTR5d8X0LHWN1xtplfOP_RNV). Plošňák vypadá třívrstvý (možná čtyř, vstvy jsou spatně vidět). Všechny limitní spínače jsou řešeny jako optické brány (všimněte si, že oba prsty v sobě mají bílé vložky, které brány detekují).
+
+Hlavní kompontenty:
+
+- krokový motor Micron SX17-1005LQECF (NEMA 17, podle datasheetu statický moment 0.51Nm)
+- ESP8266MOD
+- L5973A (2A step-down regulátor)
+- L6470H (driver k motoru)
+- 74HC14D (Hex inverting Schmitt trigger)
 
 ## Software
 
