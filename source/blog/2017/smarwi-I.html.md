@@ -8,6 +8,8 @@ date: 2017-11-28
 
 Podlehl jsem impulznímu nákupnímu rozhodnutí a pořídil [smarwi](https://vektiva.com/shop/smarwi). Celou akci spustil [Petr Stehlík](https://plus.google.com/+PetrStehl%C3%ADk/posts/bEiaeUeqkHU), který postnul link na recenzi produktu serverem [Geniální dům](http://www.genialnidum.cz/recenze-smarwi-automaticke-otevirani-oken/). Recenze na serveru ``genialnidum.cz`` je pěkně napsaná z uživatelského pohledu. Proto se na produkt zaměřím spíš optikou bastlíře a stůjce [několika](https://tech.showmax.com) Internetových [businessů](https://www.recombee.com).
 
+> Editováno 2017-11-29: přidána část o uchycení a ručním použití
+
 ## Balení a setup
 
 Celé zařízeni dorazilo pěkně zabalené za cca 3 dny od objednání na eshopu výrobce.
@@ -27,6 +29,23 @@ Vy diskusi pod Petrovým příspěvkem jsem vyjádřil hypotézu, že smarwi "br
 - změna stavu / motor běží: 480-500mA
 
 Takže zavřené okno bude stát zhruba stovku ročně (``12*0.2*24*365/1000*4.83``).
+
+### Uchycení na okno
+
+Autoři primárně míří na trh plastových oken. Takže obě montážní plochy opatřili oboustrannou lepící páskou 3M VHB (což je jedna z těch opravdu dobrých). Zároveň jsou obě montážní plochy opatřeny dírami pro šrouby. Na hřebenu 2x, na jednotce 4x. Všechny průměr 4mm.
+
+Mimochodem (je to vidět na fotografii výše) přichycení hřebenu je vymyšleno tak, že se hřeben může pohybovat v obou osách (nahoru-dolů, doleva-doprava). To umožňuje bezpečné ruční otevření okna, viz dále.
+
+### Ruční ovládání
+
+Chválím autory za ošetření krajních stavů. Např. pokud zamknete okno (zavřete na kličku) a pošlete smarwi příkaz k otevření, to správně detekuje, že okno nemůže otevřít a pošle chybový stav.
+
+Pokud je potřeba rychle pohnout s oknem (aka bouřka) jsou dvě možnosti:
+
+1. stisk ovládacího tlačítka (které je pevně spojené s jednotkou a typicky přidělané na okně, takže se neztratí). Tím dojde k odemčení motorové brzdy a oknem se dá v pohodě pohybovat.
+2. uživatel může jednou rukou odtlačit hřeben doprava, tím jej vyhákne ze zubů na hřídeli motoru a okno je opět volné.
+
+Pokud chcete okno otevřít dokořán, nic v tom nebrání (mimo případnou motorovou brzdu). Stačí tedy použít některý z postupů výše.
 
 ## Software
 
@@ -117,7 +136,7 @@ Některé ze zachycených příkazů: ``clos``, ``open``, ``stab``, ``cstart``, 
 
 Čistě z uživatelského hlediska je zařízení pěkné
 
-- kvalitní mechanické provedení
+- kvalitní mechanické provedení (opravdu mě potěšilo ošetření okrajových stavů a promyšlení ruční manipulace)
 - tichý chod
 - levnější metoda větrání než třeba rekuperace (na naše lehce netěsnící dřevěná okna ovšem nemá :))
 
