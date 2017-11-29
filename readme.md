@@ -1,5 +1,5 @@
 # Blog
 
-The source code of my blog at [lord.io](http://lord.io). Uses middleman.
+The source code of my blog at [www.bobek.cz](https://www.bobek.cz). Uses middleman.
 
-Thanks to [Jordan Andree](http://jordanandree.com/travis-ci-deploy-middleman-github-pages/) for the travis deploy script.
+Thanks to [Robert Lord](https://lord.io/) for the theme/layout of the site.
