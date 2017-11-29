@@ -9,6 +9,7 @@ date: 2017-11-28
 Podlehl jsem impulznímu nákupnímu rozhodnutí a pořídil [smarwi](https://vektiva.com/shop/smarwi). Celou akci spustil [Petr Stehlík](https://plus.google.com/+PetrStehl%C3%ADk/posts/bEiaeUeqkHU), který postnul link na recenzi produktu serverem [Geniální dům](http://www.genialnidum.cz/recenze-smarwi-automaticke-otevirani-oken/). Recenze na serveru ``genialnidum.cz`` je pěkně napsaná z uživatelského pohledu. Proto se na produkt zaměřím spíš optikou bastlíře a stůjce [několika](https://tech.showmax.com) Internetových [businessů](https://www.recombee.com).
 
 > Editováno 2017-11-29 (ráno): přidána část o uchycení a ručním použití
+>
 > Editováno 2017-11-29 (věčer): přidána část o vnitřním provedení
 
 ## Balení a setup
