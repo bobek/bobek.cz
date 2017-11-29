@@ -1,3 +1,5 @@
+all: clear build deploy
+
 build: clear
 	bundle exec middleman build -e production
 
