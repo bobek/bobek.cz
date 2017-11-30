@@ -11,6 +11,9 @@ Podlehl jsem impulznímu nákupnímu rozhodnutí a pořídil [smarwi](https://ve
 > Editováno 2017-11-29 (ráno): přidána část o uchycení a ručním použití
 >
 > Editováno 2017-11-29 (věčer): přidána část o vnitřním provedení
+>
+> Editováno 2017-11-30 (ráno): přidána reakce výrobce
+
 
 ## Balení a setup
 
@@ -161,3 +164,58 @@ Z pohledu bastlíře je hlavní **pozitivum** nešifrované MQTT a možnost změ
 - umožnit zapnout šifrování v konfiguraci zařízení
 - zveřejnit popis zpráv, aby je člověk nemusel reverse-engineerovat. Aktuálně je popsáno pouze [HTTP API](https://vektiva.gitlab.io/vektivadocs/api/#api-pres-lokalni-sit). Ale i za to dávám pozitivní body!
 
+## Reakce výrobce
+
+Poslal jsem email na `support@vektiva.com`, hned druhý den se ozvali. S jejich svolením jej "otiskuji".
+
+```
+Date: Wed, 29 Nov 2017 17:54:25 +0100
+From: Hynek Bury
+
+Dobrý den,
+
+moc nás zaujal Váš zdravě kritický přístup k našemu zařízení a děkujeme za
+věcné podněty (IP přesměrování opraveno).
+
+Máte naprostou pravdu, že se vše na MQTT přenáší přes cleartext, ale toto
+řešení jsme zvolili jako prozatímní, s tím, že v některém z dalších updatů
+firmwaru bude k dispozici volitelná alternativa, pracujeme na tom. Z našeho
+pohledu není toto zařízení úplně masový produkt, a navíc na trhu není příliš
+známý. Proto jsme zvolili strategii rychlejšího dodání na trh s tím, že některá
+softwarová vylepšení dodáme později .
+
+Každopádně přenášení uloženého hesla k WiFi přes MQTT je regulérní bug, který
+již měl být odstraněn, resp. vše v kódu se opravilo, až na malou drobnost. V
+tento moment by to již mělo být v aktuálním firmwaru opraveno a můžete si jej
+ze stránek https://vektiva.online/ aktualizovat. (Web prozatím nehlásí
+automaticky dostupnost aktualizací)
+
+Popis naší implementace MQTT komunikace máte velmi pěkný. My se budeme snažit
+nějaký oficiální popis vytvořit také, ale ještě revidujeme některé "topiky" a
+formáty zpráv, zatím jsme tedy nedošli ke zcela finální verzi. Pokusíme se to
+uspíšit, protože naším cílem není trápit zákazníky tak, aby museli protokol
+"reverse-engeneerovat" (i přesto, že to může být zábavné), ale aby měli volné
+ruce a mohli zařízení využít, jak uznají za vhodné a čas mohli věnovat třeba
+propojováním s existující infrastrukturou.
+
+Pro pořádek okomentuji i HTTP požadavek, který ve vašem textu zmiňujete.
+Využíváme jej jako "ping", abychom mohli v případě problémů našich zákazníků
+vyloučit některé jiné chybové stavy. Je ale možné, že toto do budoucna zrušíme,
+již to totiž prakticky nevyužíváme.
+
+Naše strategie není vybudovat a dodat na trh sto padesátý uzavřený ekosystém,
+ale naopak produkt schopný širší integrace, do řešení které již zákazník má a
+navíc dle jeho technických možností/znalostí.  Byli bychom velmi rádi,
+kdybychom si dokázali se zákazníky pomoci navzájem. Nakonec tento produkt
+vznikl pro řešení problému s ventilací prvotně u nás doma a věřím, že naše
+zájmy budou v mnoha ohledech velmi podobné.
+
+V příloze posílám fotografie vnitřku (na foto před-produkční verze, je shodná s
+Vaší verzí až na plastové díly). Může Vám to ušetřit pár minut při rozebírání
+:)
+
+Pokud budete mít dotazy, rádi Vám je zodpovíme!
+
+S pozdravem,
+Hynek Bury
+```
