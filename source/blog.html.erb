@@ -11,6 +11,7 @@
       <a href="<%= article.url %>" class="row gap-2">
         <span class="faded date"><%= article.date.strftime('%b %e') %></span>
         <strong><%= article.title %></strong>
+        <div class="faded"><%= article.data.subtitle%></div>
       </a>
     <% end %>
   <% end %>
