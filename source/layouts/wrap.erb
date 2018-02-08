@@ -18,7 +18,8 @@
     <%= feed_tag :atom, "/feed.xml", title: "Atom Feed" %>
     <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet"/>
     <% if current_page.data.cover? %>
-      <meta property="og:image" content="<%= image_path(current_page.data.cover) %>" />
+      <meta property="og:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.cover)) %>" />
+      <meta property="twitter:image:src" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.cover)) %>" />
     <% end %>
   </head>
   <body>
