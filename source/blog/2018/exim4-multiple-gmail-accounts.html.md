@@ -4,6 +4,7 @@ subtitle: Split-routing based on sender address in exim4
 category: hacking
 tags: linux
 date: 2018-02-08
+cover: 2018/exim4.png
 ---
 
 **mutt** is my preferred client for reading and writing mails. And I do have multiple accounts, some on my private server some on GMail (private as well as business).

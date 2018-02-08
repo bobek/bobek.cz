@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv='X-UA-Compatible' content='IE=edge;chrome=1' />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <% if current_article %>
       <title><%= current_article.title %> &ndash; bobek.cz</title>
     <% elsif defined? category %>
@@ -16,7 +16,10 @@
     <link rel=icon type="image/png" href="/favicon.png" />
     <%= stylesheet_link_tag 'all' %>
     <%= feed_tag :atom, "/feed.xml", title: "Atom Feed" %>
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet"/>
+    <% if current_page.data.cover? %>
+      <meta property="og:image" content="<%= image_path(current_page.data.cover) %>" />
+    <% end %>
   </head>
   <body>
     <div class="main col justify" role="main">
