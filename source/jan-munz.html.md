@@ -14,7 +14,7 @@ Jan na řádcích svého deníku popisuje každodenní starosti gymnazisty, kter
 
 Strana 41 a následující už navždy zůstanou prázdné. Jan druhou světovou válku nepřežil...
 
-Díky práci našich historiků existuje databáze obětí holocaustu, tam jsme také našli [záznam o Janu Münzovi](http://www.holocaust.cz/cz2/victims/person/1672607). Nejdříve byl v transportu `Bd-781` převezen do Terezína, odkud pak transportem `Bx-1855` do Treblinky, kde už neměl šanci, jako dalších 870000 lidí.
+Díky práci našich historiků existuje databáze obětí holocaustu, tam jsme také našli [záznam o Janu Münzovi](https://www.holocaust.cz/databaze-obeti/obet/110460-jan-m-nz/). Nejdříve byl v transportu `Bd-781` převezen do Terezína, odkud pak transportem `Bx-1855` do Treblinky, kde už neměl šanci, jako dalších 870000 lidí.
 
 Na [stránce o Treblince](http://www.holocaust.cz/cz2/resources/texts/treblinka/treblinka) se o českých transportech píše:
 
