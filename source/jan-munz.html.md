@@ -28,7 +28,7 @@ Deník jsme zdigitalizovali. Prosíme, abyste jej nepoužívali jakkoli komerčn
 
 Soubory ke stažení:
 
+  * [přepis deníku do textové podoby](/denik-jana-munze)
   * [PDF deníku v rozlišení 72dpi JPEG (7.6MB)](/files/jan_munz/denik-jan_munz-jpeg.pdf)
   * [PDF deníku v rozlišení 72dpi PNG (50MB)](/files/jan_munz/denik-jan_munz.pdf)
   * [PDF deníku v rozlišení 300dpi JPEG (51MB)](/files/jan_munz/denik-jan_munz-300-jpeg.pdf)
-  * [přepis deníku do textové podoby](/denik-jana-munze)
