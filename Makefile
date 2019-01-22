@@ -12,8 +12,7 @@ static: funeralni
 
 funeralni:
 	mkdir -p build/static/funeralni_symbolika/
-	cp -v ../funeralni_symbolika/out/* build/static/funeralni_symbolika/
-	cp -vr ../funeralni_symbolika/images ./build/static/funeralni_symbolika/
+	cp -vr ../funeralni_symbolika/out/* build/static/funeralni_symbolika/
 
 deploy:
 	rsync -av --progress --delete -e 'ssh -l root' build/ srv1.trusted.cz:/var/www/www.bobek.cz/
