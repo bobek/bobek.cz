@@ -25,8 +25,8 @@ Jaroslava Králová je klinická psycholožka. Pracovala jako kurátor mládeže
 
 Soubory ke stažení a návštěvě:
 
-  * [HTML pro on-line čtení](/files/funeralni_symbolika/funeralni_symbolika_v_pohadkach_a_mytech.html)
-  * [PDF](/files/funeralni_symbolika/funeralni_symbolika_v_pohadkach_a_mytech.pdf)
-  * [eBook - ePub](/files/funeralni_symbolika/funeralni_symbolika_v_pohadkach_a_mytech.epub)
-  * [eBook - mobi](/files/funeralni_symbolika/funeralni_symbolika_v_pohadkach_a_mytech.mobi)
+  * [HTML pro on-line čtení](/static/funeralni_symbolika/funeralni_symbolika_v_pohadkach_a_mytech.html)
+  * [PDF](/static/funeralni_symbolika/funeralni_symbolika_v_pohadkach_a_mytech.pdf)
+  * [eBook - ePub](/static/funeralni_symbolika/funeralni_symbolika_v_pohadkach_a_mytech.epub)
+  * [eBook - mobi](/static/funeralni_symbolika/funeralni_symbolika_v_pohadkach_a_mytech.mobi)
 
