@@ -9,6 +9,7 @@ clear:
 	rm -rf build
 
 static: funeralni
+	cp -vr static/* build/static/
 
 funeralni:
 	mkdir -p build/static/funeralni_symbolika/
