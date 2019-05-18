@@ -32,3 +32,8 @@ Motivation is to be able to deploy apps leveraging OTP to k8s (containers). Espe
   * [main repo](https://github.com/derekkraan/horde)
 * **Sharing process state / date across nodes** - [CRDT](https://github.com/derekkraan/delta_crdt_ex)
 * **Service discovery** - [Horde Registry](https://hexdocs.pm/horde/Horde.Registry.html)
+
+# Very special use-cases
+
+* [Using Rust to Scale Elixir for 11 Million Concurrent Users](https://blog.discordapp.com/using-rust-to-scale-elixir-for-11-million-concurrent-users-c6f19fc029d3)
+  * Rust implementation of `SortedSet` which is then used by Elixir backend
