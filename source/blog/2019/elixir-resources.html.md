@@ -187,3 +187,31 @@ This leads into the following key building blocks:
         end
 
         ```
+
+# Best practices
+
+## Code/Development
+
+* typical suspect - [credo](https://github.com/rrrene/credo)
+
+    ```bash
+    mix credo --strict
+    ```
+
+* spend time writing documentation in code with [ExDoc](https://github.com/elixir-lang/ex_doc)
+  * write [typespecs](https://hexdocs.pm/elixir/typespecs.html) as they are pulled by ExDoc but also used by tools like [dialyzer](http://erlang.org/doc/man/dialyzer.html)
+  * deploy *dialyzer* from the very beginning of the project
+
+* use official [formatter](https://hexdocs.pm/mix/master/Mix.Tasks.Format.html) in your projects
+
+    ```bash
+    mix format --check-formatted
+    ```
+
+## Ops/Infrastructure/Monitoring
+
+* codify / agree on generally shared metrics (e.g. rps, run queue, query time, atoms, memory, latency). Useful libraries - [exometer](https://github.com/Feuerlabs/exometer), [statix](https://github.com/lexmag/statix) (for `statsd` compatible backends). We still need to evaluate integration with Prometheus, but projects to look at 
+  * [prometheus.erl](https://github.com/deadtrickster/prometheus.erl) & [prometheus.ex](https://github.com/deadtrickster/prometheus.ex) & [prometheus-phoenix](https://github.com/deadtrickster/prometheus-phoenix) - seems to cover a lot of ground
+  * [prometheus_exometer](https://github.com/cogini/prometheus_exometer)
+
+* We have built our very [own tracing platform](https://tech.showmax.com/2016/10/tracing-distributed-systems-at-showmax/) long time ago. But it is time to go with the crowd and adopt OpenTracing or OpenCensus. There is an official client for OpenCensus - [opencensus-erlang](https://hexdocs.pm/opencensus/). OpenTracing is supported via [Spandex Project](https://github.com/spandex-project). But only DataDog seems to be currently implemented exporter.
