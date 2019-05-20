@@ -26,9 +26,14 @@ a {
     border-bottom-color: rgba(#2691EF, 0.4);
   }
 }
-h1, h2, strong {
+h1 {
+  font-size: 1.5rem;
+}
+
+h2, strong {
   font-size: 1rem;
 }
+
 blockquote {
   border-left: 4px solid rgba($fg, 0.18);
   padding-left: 1.65rem;
@@ -38,7 +43,7 @@ a, h1, h2, p, ul, ol, pre, hr, .logo, blockquote { margin: 0; }
 h2 { padding-top: 1.65rem; }
 
 .main {
-  max-width: 650px;
+  max-width: 850px;
   margin: 0 auto;
   padding: 1rem;
   @include desktop { padding: 6.5rem 1rem; }
