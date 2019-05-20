@@ -33,7 +33,10 @@ Motivation is to be able to deploy apps leveraging OTP to k8s (containers). Espe
 * **Sharing process state / date across nodes** - [CRDT](https://github.com/derekkraan/delta_crdt_ex)
 * **Service discovery** - [Horde Registry](https://hexdocs.pm/horde/Horde.Registry.html)
 
-# Very special use-cases
+# Distributed systems / data-types
 
 * [Using Rust to Scale Elixir for 11 Million Concurrent Users](https://blog.discordapp.com/using-rust-to-scale-elixir-for-11-million-concurrent-users-c6f19fc029d3)
   * Rust implementation of `SortedSet` which is then used by Elixir backend
+* [An Adventure in Distributed Programming](https://slides.com/qqwy/an-adventure-in-distributed-programming#/)
+  * Open-source [chat application](https://github.com/ResiliaDev/Planga/)
+  * Intro into distributed systems (CAP, byzantine fault). Rundown of [Mnesia](http://erlang.org/doc/man/mnesia.html), [Cassandra](http://cassandra.apache.org/), [CouchDB](http://couchdb.apache.org/) and [Riak](https://riak.com/). They are working on [Ecto adapter for Riak](https://github.com/Qqwy/elixir_riak_ecto3).
