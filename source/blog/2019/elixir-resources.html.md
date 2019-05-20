@@ -37,6 +37,157 @@ Motivation is to be able to deploy apps leveraging OTP to k8s (containers). Espe
 
 * [Using Rust to Scale Elixir for 11 Million Concurrent Users](https://blog.discordapp.com/using-rust-to-scale-elixir-for-11-million-concurrent-users-c6f19fc029d3)
   * Rust implementation of `SortedSet` which is then used by Elixir backend
-* [An Adventure in Distributed Programming](https://slides.com/qqwy/an-adventure-in-distributed-programming#/)
+* [An Adventure in Distributed Programming](https://slides.com/qqwy/an-adventure-in-distributed-programming#/) by Wiebe-Marten Wijnja
   * Open-source [chat application](https://github.com/ResiliaDev/Planga/)
   * Intro into distributed systems (CAP, byzantine fault). Rundown of [Mnesia](http://erlang.org/doc/man/mnesia.html), [Cassandra](http://cassandra.apache.org/), [CouchDB](http://couchdb.apache.org/) and [Riak](https://riak.com/). They are working on [Ecto adapter for Riak](https://github.com/Qqwy/elixir_riak_ecto3).
+* [Building Resilient Systems with Stacking](https://speakerdeck.com/keathley/building-resilient-elixir-systems) by Chris Keathley
+  * Recording from [ElixrConf EU 2019](https://www.youtube.com/watch?v=lg7M0h9eoug)
+    * Overview of techniques which helps in building more resilient systems. Refers to [How Complex Systems Fail](https://web.mit.edu/2.75/resources/random/How%20Complex%20Systems%20Fail.pdf)
+    * **Circuit brakers**: Recommended implementation is [fuse](https://github.com/jlouis/fuse).
+    * **Configuration:** Should avoid use of `mix configs`, instead he pointed to his project [Vapor](https://github.com/keathley/vapor). Example of usage (from the talk, chech project for other one):
+
+        ```elixir
+        defmodule Jenga.Application do
+          use Application
+
+          def start(_type, _args) do
+            config = [
+                port: "PORT",
+                db_url: "DB_URL",
+            ]
+
+            children = [
+                {Jenga.Config, config},
+            ]
+
+            opts = [strategy: :one_for_one, name: Jenga.Supervisor]
+            Supervisor.start_link(children, opts)
+          end
+        end
+
+        defmodule Jenga.Config do
+            use GenServer
+
+            def start_link(desired_config) do
+                GenServer.start_link(__MODULE__, desired_config, name: __MODULE__)
+            end
+
+            def init(desired) do
+                :jenga_config = :ets.new(:jenga_config, [:set, :protected, :named_table])
+                case load_config(:jenga_config, desired) do
+                :ok ->
+                    {:ok, %{table: :jenga_config, desired: desired}}
+                :error ->
+                    {:stop, :could_not_load_config}
+                end
+            end
+
+            defp load_config(table, config, retry_count \\ 0)
+            defp load_config(_table, [], _), do: :ok
+            defp load_config(_table, _, 10), do: :error
+            defp load_config(table, [{k, v} | tail], retry_count) do
+                case System.get_env(v) do
+                nil ->
+                    load_config(table, [{k, v} | tail], retry_count + 1)
+                value ->
+                    :ets.insert(table, {k, value})
+                    load_config(table, tail, retry_count)
+                end
+            end
+        end
+        ```
+
+    * **Monitoring:** you can use Erlang's [alarms](http://erlang.org/doc/man/alarm_handler.html). Example from the talk, which takes database as dependency and if not reachable will raise an alarm:
+
+        ```elixir
+        defmodule Jenga.Database.Watchdog do
+        use GenServer
+
+        def init(:ok) do
+            schedule_check()
+            {:ok, %{status: :degraded, passing_checks: 0}}
+        end
+
+        def handle_info(:check_db, state) do
+            status = Jenga.Database.check_status()
+            state = change_state(status, state)
+            schedule_check()
+            {:noreply, state}
+        end
+
+        defp change_state(result, %{status: status, passing_checks: count}) do
+            case {result, status, count} do
+            {:ok, :connected, count} ->
+                if count == 3 do
+                :alarm_handler.clear_alarm(@alarm_id)
+                end
+                %{status: :connected, passing_checks: count + 1}
+
+            {:ok, :degraded, _} ->
+                %{status: :connected, passing_checks: 0}
+
+            {:error, :connected, _} ->
+                :alarm_handler.set_alarm({@alarm_id, "We cannot connect to the database”})
+                %{status: :degraded, passing_checks: 0}
+                {:error, :degraded, _} ->
+                    %{status: :degraded, passing_checks: 0}
+            end
+        end
+        end
+        ```
+
+        Then  alarm handle can be added:
+
+        ```elixir
+        defmodule Jenga.Application do
+          use Application
+
+          def start(_type, _args) do
+            config = [
+                port: "PORT",
+                db_url: "DB_URL",
+            ]
+
+            :gen_event.swap_handler(
+                :alarm_handler,
+                {:alarm_handler, :swap},
+                {Jenga.AlarmHandler, :ok}
+            )
+
+            children = [
+                {Jenga.Config, config},
+                Jenga.Database.Supervisor,
+            ]
+
+            opts = [strategy: :one_for_one, name: Jenga.Supervisor]
+            Supervisor.start_link(children, opts)
+          end
+        end
+
+        defmodule Jenga.AlarmHandler do
+          require Logger
+
+          def init({:ok, {:alarm_handler, _old_alarms}}) do
+            Logger.info("Installing alarm handler")
+            {:ok %{}}
+          end
+
+          def handle_event({:set_alarm, :database_disconnected}, alarms) do
+            # Do something with the alarm rising (e.g. notify monitoring)
+            Logger.error("Database connection lost")
+            {:ok, alarms}
+          end
+
+          def handle_event({:clear_alarm, :database_disconnected}, alarms) do
+            # Do something with the alarm being cleared (e.g. notify monitoring)
+            Logger.error("Database connection recovered")
+            {:ok, alarms}
+          end
+
+          def handle_event(event, state) do
+            Logger.info("Unhandled alarm event: #{inspect(event)}")
+            {:ok, state}
+          end
+        end
+
+        ```
