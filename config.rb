@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'uri'
+require 'pathname'
 
 activate :syntax
 
@@ -15,7 +16,7 @@ activate :blog do |blog|
 
   # Enable pagination
   blog.paginate = true
-  blog.per_page = 6
+  blog.per_page = 12
   blog.page_link = "page/{num}"
 
   blog.generate_day_pages = false
@@ -64,6 +65,13 @@ helpers do
     html_doc.css('h2').first.add_previous_sibling(headers) if html_doc.css('h2').length > 0
 
     html_doc
+  end
+
+  def propose_changes_url(src)
+    project_root = Pathname.new(File.dirname(__FILE__))
+    source_path = Pathname.new(src)
+
+    "https://github.com/bobek/bobek.cz/blob/master/#{source_path.relative_path_from(project_root).to_s}"
   end
 end
 
