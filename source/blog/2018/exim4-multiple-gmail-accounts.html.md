@@ -1,7 +1,7 @@
 ---
 title: exim4 and multiple GMail accounts
 subtitle: Split-routing based on sender address in exim4
-category: hacking
+category: computers
 tags: linux
 date: 2018-02-08
 cover: 2018/exim4.png

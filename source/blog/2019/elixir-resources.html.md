@@ -1,7 +1,7 @@
 ---
 title: Elixir resources
 subtitle: to help with transition to Elixir
-category: hacking
+category: computers
 tags: linux
 date: 2019-05-20
 ---

@@ -1,7 +1,7 @@
 ---
 title: Tracing distributed systems at Showmax
 date: 2016-10-21
-category: showmax
+category: computers
 author: krala
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Smarwi, Část I.
-category: tinkering
+category: making
 tags: iot, esp8266
 toc: true
 date: 2017-11-28
