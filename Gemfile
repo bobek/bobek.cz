@@ -5,6 +5,7 @@ source 'https://rubygems.org'
 gem "middleman"
 gem "middleman-blog"
 gem "middleman-syntax"
+gem "middleman-livereload"
 gem "redcarpet"
 
 # for summaries

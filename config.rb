@@ -31,6 +31,8 @@ activate :blog do |blog|
   }
 end
 
+activate :livereload
+
 helpers do
   def category_longname(name)
     {
