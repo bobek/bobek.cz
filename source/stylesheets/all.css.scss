@@ -66,6 +66,12 @@ img {
   display: block;
 }
 
+// Styling for image captions when image is immediately followed by em tag (* *)
+img + em {
+  display: block;
+  text-align: center;
+}
+
 .logo {
   display: block;
   border-bottom: none;
