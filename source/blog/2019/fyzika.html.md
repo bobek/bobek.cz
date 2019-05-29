@@ -21,3 +21,4 @@ Hlavní zdroje obrázků a inspirace (ostatní jsou typicky z Wikipedie):
 * Matin Macháček: Fyzika pro základní školy a víceleté gymnázia 8
 * Helena Benkovská, Jarmila Mulačová, Dana Šipulová: Hravá Fyzika, pracovní sešit pro 6. ročník ZŠ a víceletá gymnázia
 * Helena Benkovská, Jaroslava Brůnová, Pavla Schystalová, Dana Šipulová: Hravá Fyzika, pracovní sešit pro 8. ročník ZŠ a víceletá gymnázia
+* Matin Macháček: Encyklopedie fyziky, Mladá fronta, 1995
