@@ -214,6 +214,7 @@ This leads into the following key building blocks:
   * [Optimizing Your Elixir and Phoenix projects with ETS](https://dockyard.com/blog/2017/05/19/optimizing-elixir-and-phoenix-with-ets)
   * [Avoiding GenServer bottlenecks](https://www.cogini.com/blog/avoiding-genserver-bottlenecks/)
   * [You may not need GenServers and Supervision Trees](https://pragtob.wordpress.com/2019/04/24/you-may-not-need-genservers-and-supervision-trees/)
+  * [Elixir and Phoenix Performance](https://www.cogini.com/files/elixir-performance.pdf)
 
 ## Ops/Infrastructure/Monitoring
 
