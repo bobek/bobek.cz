@@ -3,7 +3,7 @@ title: Elixir resources
 subtitle: to help with transition to Elixir
 category: computers
 tags: linux
-date: 2019-05-20
+date: 2019-05-30
 ---
 
 We are planning introducing Elixir into our toolbox. This page summarizes key resources we have user / are using for learning Elixir and pushing it to production. Feel free to propose changes via [pull-request](https://github.com/bobek/bobek.cz/blob/master/source/blog/2019/elixir-resources.html.md).
@@ -207,6 +207,13 @@ This leads into the following key building blocks:
     ```bash
     mix format --check-formatted
     ```
+
+## Code Design
+
+* `GenServer` is a great abstraction, but be aware of becoming a bottleneck thanks to serialization of messages passed to it.
+  * [Optimizing Your Elixir and Phoenix projects with ETS](https://dockyard.com/blog/2017/05/19/optimizing-elixir-and-phoenix-with-ets)
+  * [Avoiding GenServer bottlenecks](https://www.cogini.com/blog/avoiding-genserver-bottlenecks/)
+  * [You may not need GenServers and Supervision Trees](https://pragtob.wordpress.com/2019/04/24/you-may-not-need-genservers-and-supervision-trees/)
 
 ## Ops/Infrastructure/Monitoring
 
