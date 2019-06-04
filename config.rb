@@ -75,6 +75,12 @@ helpers do
 
     "https://github.com/bobek/bobek.cz/blob/master/#{source_path.relative_path_from(project_root).to_s}"
   end
+
+  def twitter_url(article)
+    url = URI.join("https://bobek.cz", article.url)
+    "https://twitter.com/intent/tweet?text=#{article.title} @kralant" \
+      "&amp;url=#{url}"
+  end
 end
 
 page "/feed.xml", layout: false
