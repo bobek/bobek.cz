@@ -208,6 +208,8 @@ This leads into the following key building blocks:
     mix format --check-formatted
     ```
 
+* nice writeup about putting these tools together - https://itnext.io/enforcing-code-quality-in-elixir-20f87efc7e66
+
 ## Code Design
 
 * `GenServer` is a great abstraction, but be aware of becoming a bottleneck thanks to serialization of messages passed to it.
