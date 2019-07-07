@@ -1,17 +1,17 @@
 ---
-title: Semaphore without MCU
+title: Traffic light without MCU
 subtitle: programming with counters
 category: making
 date: 2019-07-07
 ---
 
-Kids needed a working semaphore for one of their games. I took it as a good reason to hide in the workshop and produced one showed on the video below.
+Kids needed a working semaphore (traffic light, sorry for the Czechenglish) for one of their games. I took it as a good reason to hide in the workshop and produced one showed on the video below.
 
 <iframe width="840px" height="356px" src="https://www.youtube.com/embed/5nYlYqhAlMA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 This is super-simple project, why to write a post about it? You may ask. Initial temptation was to grab some small MCU (or even Arduino as that is basically ready to use for such project). But I have opted for old-fashion way withou using MCU and rather some combination logic.
 
-![Schematics of semaphore](semaphore/schematics.png) *Semaphore schematics ([PNG](semaphore/schematics.png), [PDF](semaphore/schematics.pdf))*
+![Schematics of the traffic light](semaphore/schematics.png) *Traffic light schematics ([PNG](semaphore/schematics.png), [PDF](semaphore/schematics.pdf))*
 
 As you can see, there are 3 main sections:
 
