@@ -19,7 +19,7 @@ As you can see, there are 3 main sections:
 * single `NE555` generating pulses for yellow warning mode
 * another `NE555` driving counter to run a "program" for a full cycle
 
-You can think about the `CD4017` counter as being a step counter, which points into look up table to resolve into desired LEDs state. Look up table is realized with set of signal diodes, which just pass 1 when needed (and not allow current to pass back to gate and/or drive other LEDs). Length of the step is determined by `NE555` output frequency.
+You can think about the `CD4017` counter as being a step counter, which points into lookup table to resolve into desired LEDs state. Lookup table is realized with set of signal diodes, which just pass 1 when needed (and not allow current to pass back to gate and/or drive other LEDs). Length of the step is determined by `NE555` output frequency.
 
 Programming table is simple:
 
