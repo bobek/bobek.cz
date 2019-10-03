@@ -105,6 +105,7 @@ GEM
       ffi (~> 1.0)
     readingtime (0.4.0)
     redcarpet (3.4.0)
+    rmagick (4.0.0)
     rouge (2.2.1)
     sass (3.4.25)
     servolux (0.13.0)
@@ -129,6 +130,7 @@ DEPENDENCIES
   nokogiri
   readingtime
   redcarpet
+  rmagick
 
 BUNDLED WITH
-   1.17.2
+   1.17.3

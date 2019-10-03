@@ -16,3 +16,5 @@ gem "builder"
 
 # For reading times
 gem "readingtime"
+
+gem "rmagick"
