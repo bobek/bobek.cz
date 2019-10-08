@@ -1,7 +1,7 @@
 ---
 ---
 
-<h1>Weekend Long Reads Suggestions Archive</h1>
+<h1>Weekend Long-Read Suggestions Archive</h1>
 
 <div class="col gap-3">
   <p class="faded"><%= page_articles('long-reads').reject { |a| a.data.unlisted }.length %> posts across <%= page_articles('long-reads').reject { |a| a.data.unlisted }.group_by {|a| a.date.strftime('%Y')}.length %> years</p>
