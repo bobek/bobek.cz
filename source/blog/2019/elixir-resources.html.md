@@ -4,7 +4,10 @@ subtitle: to help with transition to Elixir
 category: computers
 tags: linux
 date: 2019-05-30
+updated: 2019-10-08
 ---
+
+*Updated [2019-10-08](https://github.com/bobek/bobek.cz/pull/1/commits/b8ea2d0585ff88dc535bf1577cbb771d8bc76e76)*
 
 We are planning introducing Elixir into our toolbox. This page summarizes key resources we have user / are using for learning Elixir and pushing it to production. Feel free to propose changes via [pull-request](https://github.com/bobek/bobek.cz/blob/master/source/blog/2019/elixir-resources.html.md).
 
@@ -229,4 +232,7 @@ This leads into the following key building blocks:
   * [prometheus_exometer](https://github.com/cogini/prometheus_exometer)
 
 * We have built our very [own tracing platform](/blog/2016/tracing-distributed-systems-at-showmax/) long time ago. But it is time to go with the crowd and adopt [OpenTelemetry](https://opentelemetry.io/) which is a merger of OpenTracing and OpenCensus. There is an official client for OpenCensus - [opencensus-erlang](https://hexdocs.pm/opencensus/). OpenTracing is supported via [Spandex Project](https://github.com/spandex-project). But only DataDog seems to be currently implemented exporter.
+
 * Nice write up about low-level ad hoc tracing - [A guide to tracing in Elixir!](https://www.erlang-solutions.com/blog/a-guide-to-tracing-in-elixir.html)
+
+* [NATS.io support](https://hexdocs.pm/gnat/readme.html)
