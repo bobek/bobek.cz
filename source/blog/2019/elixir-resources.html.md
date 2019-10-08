@@ -36,6 +36,7 @@ This leads into the following key building blocks:
 * [An Adventure in Distributed Programming](https://slides.com/qqwy/an-adventure-in-distributed-programming#/) by Wiebe-Marten Wijnja
   * Open-source [chat application](https://github.com/ResiliaDev/Planga/)
   * Intro into distributed systems (CAP, byzantine fault). Rundown of [Mnesia](http://erlang.org/doc/man/mnesia.html), [Cassandra](http://cassandra.apache.org/), [CouchDB](http://couchdb.apache.org/) and [Riak](https://riak.com/). They are working on [Ecto adapter for Riak](https://github.com/Qqwy/elixir_riak_ecto3).
+* [Distributing Phoenix -- Part 2: Learn You a 𝛿-CRDT for Great Good](https://metasyntactic.info/distributing-phoenix-part-2/)
 * [Building Resilient Systems with Stacking](https://speakerdeck.com/keathley/building-resilient-elixir-systems) by Chris Keathley
   * Recording from [ElixrConf EU 2019](https://www.youtube.com/watch?v=lg7M0h9eoug)
     * Overview of techniques which helps in building more resilient systems. Refers to [How Complex Systems Fail](https://web.mit.edu/2.75/resources/random/How%20Complex%20Systems%20Fail.pdf) for parallels between medical systems and complex distributed services.
@@ -217,6 +218,9 @@ This leads into the following key building blocks:
   * [Avoiding GenServer bottlenecks](https://www.cogini.com/blog/avoiding-genserver-bottlenecks/)
   * [You may not need GenServers and Supervision Trees](https://pragtob.wordpress.com/2019/04/24/you-may-not-need-genservers-and-supervision-trees/)
   * [Elixir and Phoenix Performance](https://www.cogini.com/files/elixir-performance.pdf)
+  * [To spawn, or not to spawn?](https://www.theerlangelist.com/article/spawn_or_not)
+  * [The Primitives of Elixir Concurrency: a Full Example](https://www.poeticoding.com/the-primitives-of-elixir-concurrency-full-example/)
+  * [Elixir Streams to process large HTTP responses on the fly](https://www.poeticoding.com/elixir-streams-to-process-large-http-responses-on-the-fly/)
 
 ## Ops/Infrastructure/Monitoring
 
@@ -225,5 +229,4 @@ This leads into the following key building blocks:
   * [prometheus_exometer](https://github.com/cogini/prometheus_exometer)
 
 * We have built our very [own tracing platform](https://tech.showmax.com/2016/10/tracing-distributed-systems-at-showmax/) long time ago. But it is time to go with the crowd and adopt [OpenTelemetry](https://opentelemetry.io/) which is a merger of OpenTracing and OpenCensus. There is an official client for OpenCensus - [opencensus-erlang](https://hexdocs.pm/opencensus/). OpenTracing is supported via [Spandex Project](https://github.com/spandex-project). But only DataDog seems to be currently implemented exporter.
-
 * Nice write up about low-level ad hoc tracing - [A guide to tracing in Elixir!](https://www.erlang-solutions.com/blog/a-guide-to-tracing-in-elixir.html)
