@@ -4,8 +4,8 @@
 <h1>Blog Archive</h1>
 
 <div class="col gap-3">
-  <p class="faded"><%= page_articles.reject { |a| a.data.unlisted }.length %> posts across <%= page_articles.reject { |a| a.data.unlisted }.group_by {|a| a.date.strftime('%Y')}.length %> years</p>
-  <% page_articles.reject { |a| a.data.unlisted }.group_by {|a| a.date.strftime('%Y')}.each do |year, articles| %>
+  <p class="faded"><%= page_articles('blog').reject { |a| a.data.unlisted }.length %> posts across <%= page_articles('blog').reject { |a| a.data.unlisted }.group_by {|a| a.date.strftime('%Y')}.length %> years</p>
+  <% page_articles('blog').reject { |a| a.data.unlisted }.group_by {|a| a.date.strftime('%Y')}.each do |year, articles| %>
     <h2><%= year %></h2>
     <% articles.each do |article| %>
       <a href="<%= article.url %>" class="row gap-2">

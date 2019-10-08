@@ -16,8 +16,10 @@
     <link rel=icon type="image/png" href="/favicon.png" />
     <%= stylesheet_link_tag 'all' %>
     <%= feed_tag :atom, "/feed.xml", title: "Atom Feed" %>
-    <link href="https://fonts.googleapis.com/css?family=PT+Serif" rel="stylesheet"/>
-    <% if current_page.data.cover? %>
+    <% if current_page.data.ogcover? %>
+      <meta property="og:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.ogcover)) %>" />
+      <meta property="twitter:image:src" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.ogcover)) %>" />
+    <% elsif current_page.data.cover? %>
       <meta property="og:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.cover)) %>" />
       <meta property="twitter:image:src" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.cover)) %>" />
     <% end %>
@@ -29,6 +31,11 @@
       <% end %>
       <%= yield %>
     </div>
+
+    <div class="faded col gap-2 xl-center xl-row xl-gap-4">
+      <a href="https://www.iubenda.com/privacy-policy/25339392" title="Privacy Policy ">Privacy Policy (hosted by iubenda)</a>
+    </div>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1407314-1"></script>
     <script>

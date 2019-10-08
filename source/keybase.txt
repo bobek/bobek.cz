@@ -1,0 +1,72 @@
+==================================================================
+https://keybase.io/bobek
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.bobek.cz
+  * I am bobek (https://keybase.io/bobek) on keybase.
+  * I have a public key with fingerprint CDED 1582 A8BE 02B4 83D5  B0B9 F53E 93AF 3DED 42EB
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01017fe8c17677cd03957aec327ded770a5fe9ecbd9710e9c9e9ada244f3baf373ef0a",
+      "fingerprint": "cded1582a8be02b483d5b0b9f53e93af3ded42eb",
+      "host": "keybase.io",
+      "key_id": "f53e93af3ded42eb",
+      "kid": "01017fe8c17677cd03957aec327ded770a5fe9ecbd9710e9c9e9ada244f3baf373ef0a",
+      "uid": "4d3db77953355e072b79a152be062b19",
+      "username": "bobek"
+    },
+    "service": {
+      "hostname": "www.bobek.cz",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1563564242,
+  "expire_in": 157680000,
+  "prev": "4f5dc2670278bcbfc2af17cbfd7ecad3982c1aa74dd47fea9438c3bcfba1ba0e",
+  "seqno": 7,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtUm1QVFUYXhbkqyXK2kZlKLuUOLbA/dy7d8nlQ8gZnaaBZBpNWe+591y4Ley9
+7C7Ll2STktDURjojwkAqmS4JhjMwghoZGUWoKAkY5uTsZAg72MiOMAZC9zL6r5+d
+P+e87/s8z3ned97aqGBNeNADy4Fv1k+l+4MGJoBmB75ipAIBEl+GmCsQG1y6YAEP
+nS6rTeQRM4JiKEYL0MRhtJGmOR4lGIpmIUfgNA95mkZZSoAM5ADP0BgKGY6BDMuz
+OEkKBGAFgiaggLKIARFEex50yA7R7lJkOYWMUSacNQGI4oA0ETwFUMAIFAEZQuEp
+dRKHQCHmS06VoZgDrBMmipKSUwLrkr3/wP/PvouX5Eie4AFNMxRBUBREaRzQDItR
+uOLeiAOMUYFO6LCzhVBBAwlAG1JpQJSUW+SgOlW1jcflkpKSxCVIIleuEGWH5JI4
+qUCp5LtcstOsMl1l8hIUAutjESsQ7bwyRIXhhg6nKNkRM6YgOZeoqmKUkaCMJE7i
+BgSWyqIDWkUVQdFGE6oc9R/oVlsRKJ7DjTSK59AmwAGBw1kBo5UHT0OO5QnGhHMY
+y9Ikz5PKCFmGJEwcATgBsBhgUYiofRXZJcRMKz7ZPEXTKebZWVexAyKVkTVaIkQT
+FK6JfeHlkMtT+g+9PdqOPcPt3U8Wb5lW3TpNZMQzTzIWX/TiW2ULMeevrVqp265P
+IDOrscClaSmrUzORWF1Q1O29cDh0sDCn6c+NEVF1t7pma5t8laOtbXrtqf69b8S5
+U+IX94kZYqDv3Ik9wz/3zt+On8xKOFo53f0q8TAy50jgq7Z7y0Nz2z3ObsvFNfNw
+IWqzvy3deau1/vyzQ32/TmTpdWPyltGk+pbcho7AwaI2+gN4HH+kaxZ3lbpu1xaX
+lO6c67F4GzZUfDcWtRuTke3+GS+ibayomhsdbbFghSFnC572ndPwNU3X307N2Bdx
++c0g7Gbs6vH5M7arCXN/pb2bvyx1w6wV2XnNN3AgpSgrdghnzcnbDA7Pp5tHiC4v
++vokd+TK/BffdgvNzWWzMYdOP3UX3dp8Rb+m0Lbiqm/Rxp14rzMq26/t9N99EHjU
+Nt60e22SfiwmT/fbnT/Klw/cCJfTf1w7ECbvjdT1Dprkrcm93npmCM/LHVyVHNlz
+zFD9u/FjzzqdAZHkk7ZXzGHE19H2z19L2p9pe+6d4YyZsSoEfSgXhabFN7kHvkyZ
+/2jck9Vxo+7+L2dWj+Ibbx7vHxz/+x/PjoSWU3jmplrTJ2GHMMf965eiU+r8997f
+teDo6xp5sbxmMbBN9AXHtf+UvGnqTsRpy8nJ5626CzOffR+3rqEx+3DqMds07G9s
+7Fp51Nh6MeSH7KT1B4P5sy/VVHlA2pb9/wI=
+=3DBp
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/bobek
+
+==================================================================

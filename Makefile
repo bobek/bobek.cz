@@ -1,4 +1,11 @@
-all: clear build deploy
+BANNERS_SRC = $(wildcard source/long-reads/**/*.md)
+BANNERS = $(patsubst %.html.md,%.png,$(BANNERS_SRC)) $(patsubst %.html.md,%-og.png,$(BANNERS_SRC))
+
+.PHONY: all
+all: $(BANNERS)
+
+source/long-reads/%.png: source/long-reads/%.html.md
+	bin/generate_banner.rb "$<" "$(@D)"
 
 build: build_site static
 
