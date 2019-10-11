@@ -7,7 +7,7 @@ date: 2019-10-16
 published: false
 ---
 
-I came across [NATS](https://nats.io) about 2 years ago, when listening to an interview with Derek Collison (original author of NATS) and rediscovered it later this year via [Software Engineering Radio Podcast](https://www.se-radio.net/2019/06/episode-369-derek-collison-on-messaging-systems-and-nats/). I didn't have a project where I could give NATS a spin. Recently I have moved to [a new venture](https://dtone.egineering), where we are designing distributed systems from scratch. That presented an opportunity to start playing with NATS. Also project just release a version [`2.0`](https://nats-io.github.io/docs/whats_new/whats_new_20.html) (version at time of writing this article is `2.1.0`).
+I came across [NATS](https://nats.io) about 2 years ago, when listening to an interview with Derek Collison (original author of NATS) and rediscovered it later this year via [Software Engineering Radio Podcast](https://www.se-radio.net/2019/06/episode-369-derek-collison-on-messaging-systems-and-nats/). I didn't have a project where I could give NATS a spin. Recently I have moved to [a new venture](https://dtone.egineering), where we are designing distributed systems from scratch. That presented an opportunity to start playing with NATS. Also project just release a version [`2.0`](https://nats-io.github.io/docs/whats_new/whats_new_20.html) (version at time of writing this article is `2.1.0`). Timing was perfect.
 
 
 
