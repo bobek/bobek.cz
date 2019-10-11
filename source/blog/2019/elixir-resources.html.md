@@ -2,7 +2,7 @@
 title: Elixir resources
 subtitle: to help with transition to Elixir
 category: computers
-tags: linux
+tags: elixir
 date: 2019-05-30
 updated: 2019-10-08
 ---
