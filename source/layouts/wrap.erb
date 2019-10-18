@@ -6,22 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <% if current_article %>
       <title><%= current_article.title %> &ndash; bobek.cz</title>
+      <meta name="twitter:title" content="<%= current_article.title %> &ndash; bobek.cz">
+      <meta name="twitter:description" content="<%= current_article.title %> &ndash; bobek.cz">
     <% elsif defined? category %>
       <title><%= category_longname category %> &ndash; bobek.cz</title>
+      <meta name="twitter:title" content="<%= category_longname category %> &ndash; bobek.cz">
+      <meta name="twitter:description" content="<%= category_longname category %> &ndash; bobek.cz">
     <% elsif current_page.data[:title] %>
       <title><%= current_page.data[:title] %> &ndash; bobek.cz</title>
+      <meta name="twitter:title" content="<%= current_page.data[:title] %> &ndash; bobek.cz">
+      <meta name="twitter:description" content="<%= current_page.data[:title] %> &ndash; bobek.cz">
     <% else %>
       <title>Antonín Král &ndash; bobek.cz</title>
+      <meta name="twitter:title" content="Antonín Král &ndash; bobek.cz">
+      <meta name="twitter:description" content="Antonín Král &ndash; bobek.cz">
     <% end %>
     <link rel=icon type="image/png" href="/favicon.png" />
     <%= stylesheet_link_tag 'all' %>
     <%= feed_tag :atom, "/feed.xml", title: "Atom Feed" %>
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@kralant">
+    <meta name="twitter:creator" content="@kralant">
+
     <% if current_page.data.ogcover? %>
       <meta property="og:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.ogcover)) %>" />
-      <meta property="twitter:image:src" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.ogcover)) %>" />
+      <meta property="twitter:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.ogcover)) %>" />
     <% elsif current_page.data.cover? %>
       <meta property="og:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.cover)) %>" />
-      <meta property="twitter:image:src" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.cover)) %>" />
+      <meta property="twitter:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.cover)) %>" />
     <% end %>
   </head>
   <body>
