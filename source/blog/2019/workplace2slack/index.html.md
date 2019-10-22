@@ -116,6 +116,13 @@ OK
 
 I am using a free tier of [Gigalixir](https://www.gigalixir.com/) for deploying this project at the moment. We will create a `Dockerfile` in later stage to be able to deploy it to our infrastructure. But Gigalixir allows for super simple deployment (no affiliation :)). Just be aware, that you can specify region and provider when creating application with `gigalixir create`. I have not found a way how to change it later, so be sure, that you have picked the right one (I am in EU, so I went for `gcp` and `europe-west1` region).
 
+You also need to tell Gigalixir, which version of erlang/elixir you want to use. That is done via `elixir_buildpack.config` in the root of your project:
+
+```bash
+elixir_version=1.9
+erlang_version=21.3
+```
+
 We are now ready to deploy to Gigalixir. The requirement is to be able to respond to `/health` healthiness probes. Which we already have in our Router. You can monitor logs from your application with `gigalixir logs`.
 
 ## Facebook Workplace
