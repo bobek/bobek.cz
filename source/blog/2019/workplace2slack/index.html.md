@@ -69,7 +69,7 @@ end
 
 Couple things happening here -- as you can see Router is Plug by itself and also defines plug pipeline (`:match`, `Plug.RequestId`, `Plug.Logger`, `Plug.Parsers`, `:dispatch`). The really needed are only `:match` and `:dispatch`. I am using others to:
 
-- inject an unique `reques_id` or use one received in http header `X-Request-Id` it will also be added as metadata to Logger. This is done via `Plug.RequesId` plug.
+- inject a unique `request_id` or use one received in http header `X-Request-Id` it will also be added as metadata to Logger. This is done via `Plug.RequesId` plug.
 - enable logging of requests through `Plug.Logger`. This will result in log messages like
 ```
 07:43:00.314 request_id=fffe6acb5ab42be03aecef339a97f690 [info] POST /workplace
@@ -108,7 +108,7 @@ _build/dev/rel/workplace2slack/bin/workplace2slack start
 and make our first request
 
 ```bash
-$ curl http://localhost:6000/health
+$ curl http://localhost:4000/health
 OK
 ```
 
@@ -142,7 +142,7 @@ Got to your Slack and [create a new application](https://api.slack.com/apps). Yo
 
 ## Processing messages from Facebook Workplace
 
-Now we have working service, which can receive events from the Workplace. Next, we want to parse them, and later on send them to Slack. The following code is probably beyond need for being split into module and multiple methods. But let's live with that for now. Add a new method to our router, which will handle `POST` from Workplace:
+Now we have a working service, which can receive events from the Workplace. Next, we want to parse them, and later on send them to Slack. The following code is probably beyond need for being split into module and multiple methods. But let's live with that for now. Add a new method to our router, which will handle `POST` from Workplace:
 
 ```elixir
 post "/workplace" do
@@ -227,7 +227,7 @@ The actual validator is then called at the very top of message handled. My initi
 
 ## Sending messages to Slack
 
-This could have been easily implemented as a [GenServer](https://elixir-lang.org/getting-started/mix-otp/genserver.html), but I wanted to explore proper job queue a bit. [Honeydew](https://github.com/koudelka/honeydew) seems to be quite popular within the community. Only gotcha is that default in-memory queue utilizes Mnesia, do [don't forget](https://github.com/koudelka/honeydew/issues/94) to add `:mnesia` into your `extra_applications` within `mix.exs` otherwise it will not get included into the release.
+This could have been easily implemented as a [GenServer](https://elixir-lang.org/getting-started/mix-otp/genserver.html), but I wanted to explore proper job queue a bit. [Honeydew](https://github.com/koudelka/honeydew) seems to be quite popular within the community. Only gotcha is that default in-memory queue utilizes Mnesia, so [don't forget](https://github.com/koudelka/honeydew/issues/94) to add `:mnesia` into your `extra_applications` within `mix.exs` otherwise it will not get included into the release.
 
 We will also need to add some dependencies, already mentioned `honeydew` and `httpoison` for making `http` calls towards Slack API. Just add the following to `deps` in your `mix.exs`:
 
@@ -247,7 +247,7 @@ and also define worker [Workplace2Slack.SlackWorker](https://github.com/bobek/wo
 
 ## Secrets and releases
 
-As you may guess, I had a secrets (slack token and FB App Secret) hard-coded in the application configuration. It turns out, that releases makes live configuration much easier then with previous version of Elixir. Secret sauce is the fact that `config/releases.exs` will get *evaluated* when the release is going to be started. So the following (complete content of `config/releases.exs`) will do exactly what you expect:
+As you may guess, I had secrets (slack token and FB App Secret) hard-coded in the application configuration. It turns out, that releases make live configuration much easier then with previous version of Elixir. Secret sauce is the fact that `config/releases.exs` will get *evaluated* when the release is going to be started. So the following (complete content of `config/releases.exs`) will do exactly what you expect:
 
 ```elixir
 import Config
