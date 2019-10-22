@@ -7,14 +7,14 @@ date: 2019-10-22
 toc: true
 ---
 
-We are using Slack extensively at [work](https://dtone.engineering). But some parts of the company likes FB Workplace for posting updates. As we are [remote](https://handbook.dtone.engineering) company, we need to keep these type of information accessible. This lead to development of simple `workplace2slack` service. I've also got interested in Elixir, so I took this pet project as a good motivation for starting with it. Please note, that quite new to the language, so do your search before committing to stuff mentioned here.
+We are using Slack extensively at [work](https://dtone.engineering). But some parts of the company like FB Workplace for posting updates. As we are [remote](https://handbook.dtone.engineering) company, we need to keep these type of information accessible. This lead to development of simple `workplace2slack` service. I've also got interested in Elixir, so I took this pet project as a good motivation for starting with it. Please note, that I'm quite new to the language, so do your search before committing to stuff mentioned here.
 
 Complete code is available at [github](https://github.com/bobek/workplace2slack).
 
 ## Getting started
 ### Initial Elixir project
 
-I have decided not to use Phoenix as I wanted to explore `Plug` a bit more. Not sure, if that was necessary but just Elixir and Plug turned to be more then enough for this little project. I assume, that you have [Elixir already installed](https://elixir-lang.org/install.html).
+I have decided not to use Phoenix as I wanted to explore `Plug` a bit more. Not sure, if that was necessary but just Elixir and Plug turned to be more than enough for this little project. I assume, that you have [Elixir already installed](https://elixir-lang.org/install.html).
 
 Let's start with `mix new workplace2slack --sup` which will create a new Elixir project with preconfigured [supervision tree](https://hexdocs.pm/elixir/Supervisor.html). As we are building `http` API server, we need to add means of handling `http`. We will do that through `plug` (which is pluggable set of processors handling your request, similar to `rack` from Ruby world) and `cowboy` which is go to `http` server in Elixir world. We add project dependencies in `mix.exs`:
 
@@ -27,7 +27,7 @@ Let's start with `mix new workplace2slack --sup` which will create a new Elixir 
   end
 ```
 
-I have also added [Jason](https://github.com/michalmuskala/jason) which is one of the Elixir JSON parser. We will use it for (de-)serialization of incoming and outgoing requests. Running `mix deps.get` wil fetch all missing dependencies for you.
+I have also added [Jason](https://github.com/michalmuskala/jason) which is one of the Elixir JSON parsers. We will use it for (de-)serialization of incoming and outgoing requests. Running `mix deps.get` wil fetch all missing dependencies for you.
 
 #### Setting up basic routes
 
@@ -265,7 +265,7 @@ gigalixir SLACK_TOKEN="secret_slack_token" FB_APP_SECRET="secret_fb_workplace_ap
 
 ## Result
 
-So next time, somebody posts an update to Workplace such
+So next time, somebody posts an update to Workplace such as
 
 ![hard at work](fb-post.png)
 
