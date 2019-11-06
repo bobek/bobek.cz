@@ -1,13 +1,24 @@
+CURRENT_LONG_READ = source/long-reads/$(shell date +%Y)/$(shell date +%Y-%V).html.md
+LONG_READ_TEMPLATE = source/long-reads/.template.html.md
 BANNERS_SRC = $(wildcard source/long-reads/**/*.md)
 BANNERS = $(patsubst %.html.md,%.png,$(BANNERS_SRC)) $(patsubst %.html.md,%-og.png,$(BANNERS_SRC))
 
+VENV_DIR      = build/venv
+VENV_ACTIVATE = ${VENV_DIR}/bin/activate
+PYTHON        = ${VENV_DIR}/bin/python3
+
 .PHONY: all
-all: $(BANNERS)
+all: $(CURRENT_LONG_READ) $(BANNERS)
 
-source/long-reads/%.png: source/long-reads/%.html.md
-	bin/generate_banner.rb "$<" "$(@D)"
+source/long-reads/%.png:
+	bin/generate_banner.rb "$@"
 
-build: build_site static
+source/long-reads/%.html.md: source/long-reads/%.png
+	test -f $@ || sed -e "s#WEEK_SLASH#$(shell date +%Y/%V)#" $(LONG_READ_TEMPLATE) |\
+		sed -e "s#WEEK_DASH#$(shell date +%Y-%V)#" |\
+		sed -e "s/PUBLISH_DATE/$(shell date -dfriday +%Y-%m-%d)/" > $@
+
+build: $(BANNERS) build_site static
 
 build_site: clear
 	bundle exec middleman build -e production

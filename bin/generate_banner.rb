@@ -3,18 +3,13 @@
 require 'rmagick'
 require 'pp'
 
-src = ARGV[0]
-dst_dir = ARGV[1]
-dst = ''
+dst = ARGV[0]
 week = ''
 
-pp src
-pp dst_dir
-
-if src =~ %r{long-reads/\d+/([\d\-]+)\.html\.md}
+if dst =~ %r{long-reads/\d+/([\d\-]+)\.png}
   parsed = $1
   week = parsed.sub('-', '/')
-  dst = File.join(dst_dir, parsed)
+  dst = dst.sub('.png', '')
 else
   puts "Unable to parse #{src}"
   exit 1
