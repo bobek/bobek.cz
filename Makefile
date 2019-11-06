@@ -22,6 +22,10 @@ $(VENV_DIR)/bin/activate: requirements.txt
 	${PYTHON} -m pip install -Ur requirements.txt
 	touch $(VENV_DIR)/bin/activate
 
+.PHONY: send
+send: venv
+	. $(VENV_ACTIVATE) ; bin/prepare_mdmail.rb $(CURRENT_LONG_READ) | mdmail
+
 .PRECIOUS: source/long-reads/%.png
 source/long-reads/%.png:
 	bin/generate_banner.rb "$@"
