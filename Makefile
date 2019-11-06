@@ -24,7 +24,7 @@ $(VENV_DIR)/bin/activate: requirements.txt
 
 .PHONY: send
 send: venv
-	. $(VENV_ACTIVATE) ; bin/prepare_mdmail.rb $(CURRENT_LONG_READ) | mdmail
+	. $(VENV_ACTIVATE) ; MC_DEST=$(shell gpg --decrypt -qd .mc_destination) bin/prepare_mdmail.rb $(CURRENT_LONG_READ) | mdmail
 
 .PRECIOUS: source/long-reads/%.png
 source/long-reads/%.png:
