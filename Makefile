@@ -10,6 +10,19 @@ PYTHON        = ${VENV_DIR}/bin/python3
 .PHONY: all
 all: $(CURRENT_LONG_READ) $(BANNERS)
 
+.PHONY: venv
+venv: $(VENV_DIR)/bin/activate
+
+requirements.txt:
+	touch requirements.txt
+
+$(VENV_DIR)/bin/activate: requirements.txt
+	test -d $(VENV_DIR) || virtualenv -p python3 $(VENV_DIR)
+	${PYTHON} -m pip install -U pip
+	${PYTHON} -m pip install -Ur requirements.txt
+	touch $(VENV_DIR)/bin/activate
+
+.PRECIOUS: source/long-reads/%.png
 source/long-reads/%.png:
 	bin/generate_banner.rb "$@"
 
