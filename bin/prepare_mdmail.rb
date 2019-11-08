@@ -9,7 +9,7 @@ meta = YAML::load(raw)
 source = raw.gsub(/---(.|\n)*---/, '')
 
 puts %Q(Subject: #{meta['title']}
-From: longreads@bobek.cz
+From: Antonin's Long Reads <longreads@bobek.cz>
 To: #{ENV['MC_DEST']}
 
 \# #{meta['title']}
