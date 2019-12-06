@@ -54,5 +54,5 @@ kvetiny:
 	mkdir -p build/static/kvetiny/
 	cp -vr ../kvetiny/out/* build/static/kvetiny/
 
-deploy: build
+publish: build
 	rsync -av --progress --delete -e 'ssh -l root' build/ srv1.trusted.cz:/var/www/www.bobek.cz/
