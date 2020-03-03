@@ -11,7 +11,7 @@ I also needed to recover from backups multiple times already, so even this part 
 
 ## Restic
 
-Restic is super *easy* to use. It is *secure* as it assumes that storage of the backup is untrusted by default. Backups are *encrypted* with  AES-256 in counter mode and authentication is done using Poly1305-AES. It is quite *fast*. Restic needs under 4 minutes to go through my 366GB home. `rsync` needed something like 20-30 minutes to do the same job.
+Restic is super *easy* to use. It is *secure* as it assumes that storage of the backup is untrusted by default. Backups are *encrypted* with  AES-256 in counter mode and authentication is done using Poly1305-AES. Checkout [Filippo's article](https://blog.filippo.io/restic-cryptography/) for a deeper look into the restic security model. It is quite *fast*. Restic needs under 4 minutes to go through my 366GB home. `rsync` needed something like 20-30 minutes to do the same job.
 
 I am using restic with two storage backends -- `sftp` and `rclone`. Mode of operation is still the same, only what changes (from the user's perspective is URL).
 
@@ -59,7 +59,7 @@ You can check your snapshots with `snapshots` command, such as
 
 ```
 ~ ❯ restic -r sftp:bobek@klobouk:/klobouk/backups/restic snapshots                
-enter password for repository: 
+enter password for repository:
 repository 0507dc2c01 opened successfully, password is correct
 ID        Time                 Host        Tags        Paths
 ------------------------------------------------------------------
@@ -125,7 +125,64 @@ You can run `forget` without a `--prune` and it will be quick as it only marks s
 ```
 bobek@klobouk:~$ du -sh /klobouk/backups/restic
 587G    /klobouk/backups/restic
+
+bobek@klobouk:~$ restic -r /klobouk/backups/restic prune --cleanup-cache
+enter password for repository:
+repository 5a4fef57 opened successfully, password is correct
+counting files in repo
+building new index for repo
+[1:10:38] 100.00%  121521 / 121521 packs
+repository contains 121521 packs (2995676 blobs) with 577.392 GiB
+processed 2995676 blobs: 0 duplicate blobs, 0 B duplicate
+load all snapshots
+find data that is still in use for 15 snapshots
+[7:16] 100.00%  15 / 15 snapshots
+found 2294461 of 2995676 data blobs still in use, removing 701215 blobs
+will remove 0 invalid files
+will delete 27364 packs and rewrite 14807 packs, this frees 172.604 GiB
+[2:27:26] 100.00%  14807 / 14807 packs rewritten
+counting files in repo
+[37:10] 100.00%  85892 / 85892 packs
+finding old index files
+saved new indexes as [82c9a37f 5acc102a d5daaa0c 4a5dee08 881d6187 e9dfa06e 5bf9bf27 a3b85e96 daf45279 b56cc75e 95ef84d2 7e39afc3 9f10a455 ea80a8e9 b65b4106 6def21e2 c6ea3aae c0b30616 bb03b1eb f9c4261c 2babd31c e7d80fa8 8a5b5e47 984d8a78 c3275bb3 071e64a9 c97bb60c f263321e 67629707]
+remove 125 old index files
+[26:01] 100.00%  42171 / 42171 packs deleted
+done
+
+bobek@klobouk:~$ du -sh /klobouk/backups/restic
+412G    /klobouk/backups/restic
 ```
+
+### Recovery
+
+Let's restore some data. Frequently, I don't need a recovery of complete backup (like complete home), but rather some particular directory or file. Something like -- I've just crashed my Firefox, lost all the open tabs and want to restore the complete Firefox directory.
+
+1. Use `snapshots` to figure ID of snapshot we want to recover from. Let's pick the latest from our example, which is `72217508` at our example above.
+1. User `restore` to get files from that snapshot. I can look something like
+
+```
+~ ❯ restic -r sftp:bobek@klobouk:/klobouk/backups/restic restore 72217508  --target /tmp/restore-firefox --include /home/bobek/.mozilla/firefox
+enter password for repository:
+repository 0507dc2c01 opened successfully, password is correct
+restoring <Snapshot 72217508 of [/home/bobek] at 2020-03-03 09:20:54.744399448 +0100 CET by bobek@bobek> to /tmp/restore
+```
+
+And we have our files under `/tmp/restore/home/bobek/.mozilla/firefox` as expected, with a proper file mode bits etc.
+
+### Locking
+
+`restic` locks the repo when working with it. It will tell you when and who locked it. For example:
+
+```
+~ ❯ restic -r sftp:bobek@klobouk:/klobouk/backups/restic snapshots
+enter password for repository:
+repository 0507dc2c01 opened successfully, password is correct
+Fatal: unable to create lock in backend: repository is already locked exclusively by PID 18172 on klobouk by bobek (UID 1000, GID 1000)
+lock was created at 2020-03-03 09:48:29 (1h37m6.789848817s ago)
+storage ID 9e313963
+```
+
+In cases, where you are sure that process which acquired lock is already dead, you may need to use `unlock` command. It is also a good idea to run `restic check` to verify consistency of the repository afterwards.
 
 ## rclone
 
