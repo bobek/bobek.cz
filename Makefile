@@ -43,7 +43,7 @@ build_site: clear
 clear:
 	rm -rf build
 
-static: funeralni kvetiny medicinske
+static: funeralni kvetiny medicinske vanocni
 	cp -vr static/* build/static/
 
 funeralni:
@@ -57,6 +57,10 @@ kvetiny:
 medicinske:
 	mkdir -p build/static/medicinske_symboly/
 	cp -vr ../medicinske_symboly/out/* build/static/medicinske_symboly/
+
+vanocni:
+	mkdir -p build/static/vanocni_symboly/
+	cp -vr ../vanocni_symboly/out/* build/static/vanocni_symboly/
 
 publish: build
 	rsync -av --progress --delete -e 'ssh -l root' build/ srv1.trusted.cz:/var/www/www.bobek.cz/
