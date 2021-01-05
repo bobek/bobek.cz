@@ -244,9 +244,8 @@ done
 
 ssh root@10.0.0.250 'df -h /klobouk/'
 
-read -s -t 5 -p "Enter restic password, followed by [ENTER]" resticpassword
+read -s -t 5 -p "Enter restic password, followed by [ENTER]" RESTIC_PASSWORD && export RESTIC_PASSWORD
 echo ""
-export RESTIC_PASSWORD=$resticpassword
 
 restic -r "$SFTP_REPO" snapshots --cleanup-cache
 
