@@ -37,21 +37,20 @@ Important thing is to keep common sense in the play. Cover information, which co
 
 ## Key benefits of written standups
 
-- One can read way faster then listen/speak. So you can cover way more people when reading their notes.
+- One can read way faster than listen/speak. So you can cover way more people when reading their notes.
 - Having a links to additional resources give opportunity to dig a bit deeper and ask meaningful questions.
 - Google Document allows for inline comments which became a great tool for asking additional information asynchronously.
 - It is fair for everybody, despite their schedules or time-zones. It turned to be really valuable for every team, we have rolled this out to. It works for team in one time-zone as well as for teams distributed around the globe. Standup basically follows the sun.
-- Allows people, who are for any reason were missing on a particular standup, to catch up easily.
+- Allows people, who for any reason missed a particular standup, to catch up easily.
 - Produces body of *searchable* and *rich* documents.
 - It also helps you to see what you have achieved during the day. And get the sense of accomplishment, which is otherwise challenging to get at knowledge jobs.
 - Best is to treat written standup as your logbook. Filling it during the day. It removes burden of remembering what you have done at the end of the day. As well as it allows for faster pickup by others.
 
 ## Adoption
 
-Current experience is, that people adopt the concept very quickly.
+Current experience is that people adopt the concept very quickly.
 
 It is important to make sure, that people feel safe to share true notes. They may start filling in trivialities or even made up note, if they feel insecure. Leading by example really worked for me, so I am not afraid of making logs like the following one for myself.
 
 > It has been a very slow/unproductive day with dentist and MD appointments. Then catching and responding to the slack on various threads.
-
 
