@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "webrick"
 gem "middleman"
 gem "middleman-blog"
 gem "middleman-syntax"
