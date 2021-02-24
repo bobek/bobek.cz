@@ -24,7 +24,7 @@ To address these issues, I have used concept of a **written standup** at multipl
 Whole concept got its inspiration from a [long history of logbooks](https://en.wikipedia.org/wiki/Logbook).
 
 - Bot creates an empty document every midnight UTC on the shared Google Drive (or any other collaborative storage). Bot follows naming schema of `{year}/{month}/{year}-{month}-{day}_standup`. Documents are made as copies of a template. Template is just a normal document. This allows to easily make changes to all future standups.
-- Bot publishes the link to Slack channel `#engineering-standups`. Slack channel makes it really easy to get back couple standups. Which is quite handy for example when you get back from vacation.
+- Bot publishes the link to Slack channel `#engineering-standups`. Slack channel makes it really easy to get back couple standups. Which is quite handy for example when you get back from vacation. ![example of standaup slack channel](standup_slack.png)
 - Everybody has her/his section in the document.
 - Your record in the document should be finalized by the **end of your work day**. In other words -- you are supposed to be capturing what you have *done the same day* or what are you *planning to be doing next day*. It doesn't typically talk about yesterday (in contrast to typical standup).
 - On the other hand, when you start working in the morning. Quickly go through the stand up from the **previous day**. That will help you to see what others have done.
