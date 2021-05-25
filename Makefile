@@ -35,6 +35,12 @@ source/long-reads/%.html.md: source/long-reads/%.png
 		sed -e "s#WEEK_DASH#$(shell date +%Y-%V)#" |\
 		sed -e "s/PUBLISH_DATE/$(shell date -dfriday +%Y-%m-%d)/" > $@
 
+security: security.txt.asc
+	scp security.txt.asc root@srv1.trusted.cz:/var/www/letsencrypt/.well-known/security.txt
+
+security.txt.asc: security.txt
+	gpg --clear-sign $<
+
 build: $(BANNERS) build_site static
 
 build_site: clear
