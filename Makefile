@@ -39,6 +39,7 @@ security: security.txt.asc
 	scp security.txt.asc root@srv1.trusted.cz:/var/www/letsencrypt/.well-known/security.txt
 
 security.txt.asc: security.txt
+	@rm -f $@
 	gpg --clear-sign $<
 
 build: $(BANNERS) build_site static
