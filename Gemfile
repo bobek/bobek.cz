@@ -1,19 +1,22 @@
 source 'https://rubygems.org'
 
-gem "webrick"
-gem "middleman"
-gem "middleman-blog"
-gem "middleman-syntax"
-gem "middleman-livereload"
-gem "redcarpet"
+gem 'middleman'
+gem 'middleman-blog'
+gem 'middleman-livereload'
+gem 'middleman-syntax'
+gem 'redcarpet'
+gem 'webrick'
+
+# Temporary fix for https://github.com/middleman/middleman/issues/2569
+gem 'haml', '~> 5.0'
 
 # for summaries
-gem "nokogiri"
+gem 'nokogiri'
 
 # For feed.xml.builder
-gem "builder"
+gem 'builder'
 
 # For reading times
-gem "readingtime"
+gem 'readingtime'
 
-gem "rmagick"
+gem 'rmagick'
