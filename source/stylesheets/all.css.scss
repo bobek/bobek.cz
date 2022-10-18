@@ -9,8 +9,8 @@ $fg-faded: rgba($fg,0.4);
 html, body {
   color: $fg;
   background-color: #fff;
-  font-family: 'PT Serif', Times, serif;
-  font-size: 15px;
+  font-family: Iowan Old Style, Iowan, Charter, Palatino Linotype, Palatino, Book Antiqua, Palatino LT STD, Times New Roman, Times, serif;
+  font-size: 20px;
 }
 
 a {
@@ -44,7 +44,7 @@ a, h1, h2, p, ul, ol, pre, hr, .logo, blockquote { margin: 0; }
 h2 { padding-top: 1.65rem; }
 
 .main {
-  max-width: 850px;
+  max-width: 950px;
   margin: 0 auto;
   padding: 1rem;
   @include desktop { padding: 6.5rem 1rem; }
@@ -56,14 +56,14 @@ h2 { padding-top: 1.65rem; }
   font-weight: bold;
 }
 
-p, ul, ol, h1, h2 { line-height: 1.9; }
+p, ul, ol, h1, h2 { line-height: 1.6; }
 ul, ol { padding-left: 1.5em; }
 .footnotes { font-size: 0.9em; }
 .footnotes li { margin-top: 1rem; }
 
 img {
-  max-width: 100%;
-  margin: 0 auto;
+  max-width: 80%;
+  margin: 2em auto;
   display: block;
 }
 
@@ -71,6 +71,7 @@ img {
 img + em {
   display: block;
   text-align: center;
+  margin: -2em auto;
 }
 
 .logo {
