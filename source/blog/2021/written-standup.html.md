@@ -26,8 +26,6 @@ Written standup is a simple process. Here are the steps involved:
 
 That's it! Written standup is a simple process that can have a big impact on your team's productivity and effectiveness.
 
-![Example of a written standup](standup_example.png) _Example page from a written standup document of an IoT project._
-
 ## Tips for Effective Written Standup
 
 Here are a few tips for effective written standup:
@@ -39,3 +37,5 @@ Here are a few tips for effective written standup:
 - Be open to feedback from your teammates.
 
 With a little practice, written standup can become a valuable tool for your team.
+
+![Example of a written standup](standup_example.png) _Example page from a written standup document of an IoT project._
