@@ -1,4 +1,5 @@
 <% wrap_layout :wrap do %>
+
   <div class="col gap-4 justify">
     <article class="col justify gap-4 justify">
       <div class="col gap-4 xl-col xl-gap-0 justify">
@@ -12,13 +13,13 @@
           </div>
         </div>
       </div>
-      <div class="col gap-3 justify article">
+      <main>
         <% if current_article.data[:toc] %>
           <%= insert_toc(current_article.body) %>
         <% else %>
           <%= current_article.body %>
         <% end %>
-      </div>
+      </main>
     </article>
     <hr/>
 
