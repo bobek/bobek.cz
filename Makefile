@@ -69,5 +69,6 @@ vanocni:
 	mkdir -p build/static/vanocni_symboly/
 	cp -vr ../vanocni_symboly/out/* build/static/vanocni_symboly/
 
+# TODO: Consider https://github.com/divriots/jampack
 publish: build
 	rsync -av --progress --delete -e 'ssh -l root' build/ srv1.trusted.cz:/var/www/www.bobek.cz/
