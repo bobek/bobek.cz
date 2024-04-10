@@ -1,5 +1,5 @@
 ---
-title: Smarwi, Část I.
+title: Smarwi
 category: making
 tags: iot, esp8266
 toc: true
@@ -19,7 +19,7 @@ Podlehl jsem impulznímu nákupnímu rozhodnutí a pořídil [smarwi](https://ve
 
 Celé zařízeni dorazilo pěkně zabalené za cca 3 dny od objednání na eshopu výrobce.
 
-![smarwi v krabici](2017/smarwi_baleni.jpg)
+![smarwi v krabici](smarwi_baleni.jpg)
 
 Po startu vytvoří smarwi vytvoří wifi síť s SSDI ``SWR-*``. Stačí se do ní připojit a už můžete konfigurovat zařízení na ``http://192.168.1.1``. Klíčové je nastavit SSDI a heslo do wifi sítě, která ma konektivitu do Internetu, aby se mohlo smarwi spojit se serverem výrobce. Defaultní konfigurace má nastaveno ``broker.vektiva.com`` jako svůj cíl. Ano, adresu brokera lze takto jednoduše změnit! Velké plus :)
 
@@ -68,7 +68,7 @@ Hlavní kompontenty:
 
 Mám rád open-source, nemám rád vendor lock-in. Mám pocit, že by svoje "smart" krabičky chtěl ovládat sám. Často se k tomu pak v budoucnu nedostanu, ale rád mám ten pocit, že můžu (kdybych chtěl, měl čas atd.).
 
-Vektiva udělala několik rozhodnutí, které jsou z tohoto pohledu dobrá. Jedna nejspíš používají všemi oblíbený ESP8266, protože v HTTP requestech se vyskytuje ``User-Agent: ESP8266HTTPClient``. Ale hlavně používají MQTT pro veškerou zajímavou komunikaci. A [šifrování MQTT](https://hackaday.com/2017/06/20/practical-iot-cryptography-on-the-espressif-esp8266/) neřešili.
+Vektiva udělala několik rozhodnutí, které jsou z tohoto pohledu dobrá. Jednak nejspíš používají všemi oblíbený ESP8266, protože v HTTP requestech se vyskytuje ``User-Agent: ESP8266HTTPClient``. Ale hlavně používají MQTT pro veškerou zajímavou komunikaci. A [šifrování MQTT](https://hackaday.com/2017/06/20/practical-iot-cryptography-on-the-espressif-esp8266/) neřešili.
 
 Zatím jsem jen pustil ``tcpdump`` a podíval se zhruba na provoz. Vyskytují se zde dva typy provozu.
 
@@ -166,7 +166,7 @@ Z pohledu bastlíře je hlavní **pozitivum** nešifrované MQTT a možnost změ
 
 ## Reakce výrobce
 
-Poslal jsem email na `support@vektiva.com`, hned druhý den se ozvali. S jejich svolením jej "otiskuji".
+Poslal jsem email na `support@vektiva.com`, hned druhý den se ozvali. S jejich svolením jej zveřejňuji:
 
 ```
 Date: Wed, 29 Nov 2017 17:54:25 +0100
