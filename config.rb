@@ -1,7 +1,6 @@
 require 'nokogiri'
 require 'uri'
 require 'pathname'
-require 'pandoc-ruby'
 
 activate :syntax
 
@@ -182,9 +181,6 @@ set :markdown_engine, :redcarpet
 # set :markdown, :fenced_code_blocks => true, :smartypants => true, :footnotes => true, link_attributes: { rel: 'nofollow', target: '_blank' }, tables: true,
 set :markdown, :fenced_code_blocks => true, :smartypants => false, :footnotes => false, link_attributes: { rel: 'nofollow', target: '_blank' }, tables: true,
       syntax_highlighter: 'rouge', input: 'GFM', with_toc_data: true
-
-#set :markdown_engine, :pandoc
-#set :markdown, :filter => "pandoc-sidenote"
 
 set :css_dir, 'stylesheets'
 set :js_dir, 'javascripts'

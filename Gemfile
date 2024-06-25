@@ -10,7 +10,6 @@ gem 'redcarpet'
 gem 'webrick'
 
 gem 'terser'
-gem 'pandoc-ruby'
 
 # for summaries
 gem 'nokogiri'
