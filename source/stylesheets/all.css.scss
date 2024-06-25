@@ -1,37 +1,51 @@
-@import 'normalize';
-@import 'grid';
-@import 'syntax';
-@import 'font';
+@import "normalize";
+@import "grid";
+@import "syntax";
+@import "font";
 
 $fg: #303030;
 
-$fg-faded: rgba($fg,0.4);
-html, body {
+$fg-faded: rgba($fg, 0.4);
+html,
+body {
   color: $fg;
   background-color: #fff;
-  font-family: Iowan Old Style, Iowan, Charter, Palatino Linotype, Palatino, Book Antiqua, Palatino LT STD, Times New Roman, Times, serif;
+  font-family:
+    Iowan Old Style,
+    Iowan,
+    Charter,
+    Palatino Linotype,
+    Palatino,
+    Book Antiqua,
+    Palatino LT STD,
+    Times New Roman,
+    Times,
+    serif;
   font-size: 20px;
 }
 
 a {
   color: inherit;
   text-decoration: bold;
-  transition: 100ms color linear, 100ms border-color linear;
+  transition:
+    100ms color linear,
+    100ms border-color linear;
   &:hover {
-    color: #2691EF;
+    color: #2691ef;
   }
 }
 .article a {
   border-bottom: 1px solid rgba($fg, 0.4);
   &:hover {
-    border-bottom-color: rgba(#2691EF, 0.4);
+    border-bottom-color: rgba(#2691ef, 0.4);
   }
 }
 h1 {
   font-size: 1.5rem;
 }
 
-h2, strong {
+h2,
+strong {
   font-size: 1rem;
 }
 
@@ -39,15 +53,32 @@ blockquote {
   border-left: 4px solid rgba($fg, 0.18);
   padding-left: 1.65rem;
 }
-.article a { border-bottom: 1px solid rgba($fg, 0.4); }
-a, h1, h2, p, ul, ol, pre, hr, .logo, blockquote { margin: 0; }
-h2 { padding-top: 1.65rem; }
+.article a {
+  border-bottom: 1px solid rgba($fg, 0.4);
+}
+a,
+h1,
+h2,
+p,
+ul,
+ol,
+pre,
+hr,
+.logo,
+blockquote {
+  margin: 0;
+}
+h2 {
+  padding-top: 1.65rem;
+}
 
 .main {
   max-width: 950px;
   margin: 0 auto;
   padding: 1rem;
-  @include desktop { padding: 6.5rem 1rem; }
+  @include desktop {
+    padding: 6.5rem 1rem;
+  }
 }
 
 .faded {
@@ -56,10 +87,23 @@ h2 { padding-top: 1.65rem; }
   font-weight: bold;
 }
 
-p, ul, ol, h1, h2 { line-height: 1.6; }
-ul, ol { padding-left: 1.5em; }
-.footnotes { font-size: 0.9em; }
-.footnotes li { margin-top: 1rem; }
+p,
+ul,
+ol,
+h1,
+h2 {
+  line-height: 1.6;
+}
+ul,
+ol {
+  padding-left: 1.5em;
+}
+.footnotes {
+  font-size: 0.9em;
+}
+.footnotes li {
+  margin-top: 1rem;
+}
 
 img {
   max-width: 80%;
@@ -88,7 +132,9 @@ img + em {
 a.logo {
   opacity: 0.3;
   transition: 100ms opacity linear;
-  &:hover { opacity: 1; }
+  &:hover {
+    opacity: 1;
+  }
 }
 .logo.for-article {
   @include desktop {
@@ -109,9 +155,12 @@ code {
   font-family: Monaco, "Source Code Pro", monospace;
   font-size: 0.85rem;
 }
-pre>code { background-color: transparent; padding: 0; }
-a>code {
-  border-bottom: 1px solid mix(#2691EF, #f6f6f6, 40%);
+pre > code {
+  background-color: transparent;
+  padding: 0;
+}
+a > code {
+  border-bottom: 1px solid mix(#2691ef, #f6f6f6, 40%);
   // background-color: mix(#2691EF, #f8f8f8, 15%);
 }
 
@@ -129,7 +178,7 @@ hr {
   border: 1px solid #ccc;
   padding: 1rem;
   align-self: flex-start;
-  &>h2 {
+  & > h2 {
     padding: 0;
   }
 }
