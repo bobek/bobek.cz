@@ -125,9 +125,62 @@ helpers do
   end
 end
 
+class Shortcodes
+	cattr_accessor :middleman_app
+
+	def self.sidenote(args)
+    %|<span class="sidenote-number"><small class="sidenote">#{args[:snippet_body]}</small></span>|
+	end
+
+	def self.parse(snippet)
+		handle = /(?<=\[\[)\w+(?=\W)/.match(snippet)[0].to_sym
+		args = {}
+
+    args[:snippet_body] = snippet.slice((2 + handle.size + 1)..-3)
+
+		# Create hash of the the provided arguments
+		snippet.slice((2 + handle.size)..-3).scan(/\w+="[^"]+"/).each do |x|
+			property, value = x.split(/\=/)
+			property = property.to_sym
+			value = value.slice(1..-2)
+
+			# When multiple properties are used, store each of the values
+			# as an array, instead of overwriting each.
+			if not args.has_key? property
+				args[property] = value
+			elsif args[property].is_a? Array
+				args[property].push value
+			else
+				args[property] = [args[property], value]
+			end
+		end
+
+		# Check if a method exists for the provided handle
+		if Shortcodes.methods.include? handle
+			Shortcodes.send(handle, args)
+		else
+			return snippet
+		end
+	end
+end
+Shortcodes.middleman_app = self
+
+class Middleman::Renderers::MiddlemanRedcarpetHTML < ::Redcarpet::Render::HTML
+	def preprocess(doc)
+		doc.gsub(/\[\[\w+.*?\]\]/) { |m| Shortcodes::parse(m) }
+	end
+
+	def postprocess(doc)
+		# Postprocess with the SmartPants plugin. If not desired
+		# the entire postprocess method can be removed.
+		doc = Redcarpet::Render::SmartyPants.render(doc)
+	end
+end
+
 #set :markdown_engine, :kramdown
 set :markdown_engine, :redcarpet
-set :markdown, :fenced_code_blocks => true, :smartypants => true, :footnotes => true, link_attributes: { rel: 'nofollow', target: '_blank' }, tables: true, 
+# set :markdown, :fenced_code_blocks => true, :smartypants => true, :footnotes => true, link_attributes: { rel: 'nofollow', target: '_blank' }, tables: true,
+set :markdown, :fenced_code_blocks => true, :smartypants => false, :footnotes => false, link_attributes: { rel: 'nofollow', target: '_blank' }, tables: true,
       syntax_highlighter: 'rouge', input: 'GFM', with_toc_data: true
 
 #set :markdown_engine, :pandoc

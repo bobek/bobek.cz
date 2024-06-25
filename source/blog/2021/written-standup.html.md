@@ -17,14 +17,12 @@ If you are a distributed team, I highly recommend using written standup. It is a
 
 ## How to Do Written Standup
 
-Written standup[^situp] is a simple process. Here are the steps involved:
+Written standup[[sidenote Can we call it standup, if you are sitting, when writing it? Maybe it should be called *situp* or standing desks have to required.]] is a simple process. Here are the steps involved:
 
 1. Simple automation creates a fresh standup document during the night.
 1. At the beginning of each day, each team member writes a short update about what they plan to work on that day.
 1. The updates are then shared with the rest of the team.
 1. At the end of the day, each team member writes a short update about what they've actually worked on and what they plan to work on the next day.
-
-[^situp]: Can we call it standup, if you are sitting, when writing it? Maybe it should be called `situp` :smile:
 
 That's it! Written standup is a simple process that can have a big impact on your team's productivity and effectiveness.
 
