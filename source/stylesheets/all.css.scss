@@ -1,9 +1,9 @@
-@import "normalize";
-@import "grid";
-@import "syntax";
-@import "font";
+@use "normalize";
+@use "syntax";
+@use "font";
+@use "sidenotes";
 
-@import "sidenotes";
+@import "grid";
 
 $fg: #303030;
 
