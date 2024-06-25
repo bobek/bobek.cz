@@ -1,0 +1,25 @@
+@use "sass:map";
+
+$breakpoints: (
+  "xs": 0,
+  "sm":  500px,
+  "md":  650px,
+  "lg":  900px
+) !default;
+
+@mixin breakpoint($sizes...) {
+  @each $size in $sizes {
+    @if not map.has-key($breakpoints, $size) {
+      @err "No such breakpoint: #{$size}. ";
+    }
+
+    @if $size == "xs" {
+      @content($size);
+    }
+    @else {
+      @media only screen and (min-width: map.get($breakpoints, $size)) {
+        @content($size);
+      }
+    }
+  }
+}

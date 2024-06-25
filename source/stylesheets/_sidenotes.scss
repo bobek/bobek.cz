@@ -1,0 +1,121 @@
+@use "_breakpoints";
+
+body {
+  counter-reset: sidenote-counter;
+}
+
+@media (max-width: 1499px) {
+  .sidenote,
+  .marginnote {
+    display: block;
+    margin: 1em 2em;
+    padding: 0.5em 1em;
+    background-color: var(--color-bg-box);
+    border-left: var(--border-thick) var(--color-border-light);
+  }
+}
+
+@media (min-width: 1500px) {
+  .sidenote,
+  .marginnote {
+    float: right;
+    clear: right;
+    margin-right: -14vw;
+    width: 12vw;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    line-height: 1.3;
+    vertical-align: baseline;
+    position: relative;
+    text-align: left;
+    border-bottom: var(--border-thin) var(--color-border-light);
+  }
+  /* Highlight the sidenote when mouse hovers on the sidenote number in body. */
+  .sidenote-number:hover .sidenote {
+    background-color: yellow;
+  }
+}
+
+.sidenote-number {
+  counter-increment: sidenote-counter;
+}
+
+/* Counter in the main body. */
+.sidenote-number:after {
+  content: counter(sidenote-counter);
+
+  vertical-align: super;
+  font-size: 0.7em;
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+/* Counter before the sidenote in the margin. */
+.sidenote:before {
+  content: counter(sidenote-counter) " ";
+  vertical-align: super;
+
+  position: relative;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+
+// by using margin-top for up/down we make sure that moved there's no
+// unnecessary whitespace between moved marginnote and other notes below (it
+// may still overlap with notes on top of it, so beware!)
+// left/right moves cannot move margin-left, because they don't do anything for
+// sidenotes
+
+@media (min-width: 1500px) {
+  .sd-move-top-1 {
+    top: -1em;
+  }
+  .sd-move-top-3 {
+    top: -3em;
+  }
+  .sd-move-top-5 {
+    top: -5em;
+  }
+  .sd-move-top-7 {
+    top: -7em;
+  }
+
+  .sd-move-down-1 {
+    margin-top: 1em;
+  }
+  .sd-move-down-3 {
+    margin-top: 3em;
+  }
+  .sd-move-down-5 {
+    margin-top: 5em;
+  }
+  .sd-move-down-7 {
+    margin-top: 7em;
+  }
+
+  .sd-move-left-1 {
+    left: -1em;
+  }
+  .sd-move-left-3 {
+    left: -3em;
+  }
+  .sd-move-left-5 {
+    left: -5em;
+  }
+  .sd-move-left-7 {
+    left: -7em;
+  }
+
+  .sd-move-right-1 {
+    left: 1em;
+  }
+  .sd-move-right-3 {
+    left: 3em;
+  }
+  .sd-move-right-5 {
+    left: 5em;
+  }
+  .sd-move-right-7 {
+    left: 7em;
+  }
+}
