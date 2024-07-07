@@ -17,7 +17,7 @@ If you are a distributed team, I highly recommend using written standup. It is a
 
 ## How to Do Written Standup
 
-Written standup[[sidenote Can we call it standup, if you are sitting, when writing it? Maybe it should be called *situp* or standing desks have to required.]] is a simple process. Here are the steps involved:
+Written standup[[sidenote Can we call it standup, if you are sitting, when writing it? Maybe it should be called *situp* or standing desks have to be required.]] is a simple process. Here are the steps involved:
 
 1. Simple automation creates a fresh standup document during the night.
 1. At the beginning of each day, each team member writes a short update about what they plan to work on that day.
@@ -31,11 +31,11 @@ That's it! Written standup is a simple process that can have a big impact on you
 Here are some tips for effective written standup:
 
 - Keep your updates short and to the point.
-- Share links to the relevant resources (tickets, code, MRs).
+- Share links to the relevant resources (tickets, code, merge-requests).
 - Be specific about what you plan to work on and what you actually worked on.
 - Be honest about your progress.
 - Be open to feedback from your teammates.
 
 With a little practice, written standup can become a valuable tool for your team.
 
-![Example of a written standup](standup_example.png) _Example page from a written standup document of an IoT project._
+![Example of a written standup](standup_example.png) *Example page from a written standup document of an IoT project.*
