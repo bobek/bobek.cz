@@ -117,7 +117,8 @@ img {
 img + em {
   display: block;
   text-align: center;
-  margin: -2em auto;
+  margin-top: -2em;
+  margin-bottom: 2em;
 }
 
 .logo {
