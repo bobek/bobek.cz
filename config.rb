@@ -6,8 +6,7 @@ activate :syntax
 
 activate :blog do |blog|
   blog.name = 'blog'
-  blog.prefix = "blog"
-  blog.permalink = "{year}/{title}.html"
+  blog.permalink = "{title}.html"
   blog.sources = "{year}/{title}.html"
   blog.layout = "layouts/post"
   # blog.tag_template = "tag.html"
