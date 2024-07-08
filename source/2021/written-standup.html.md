@@ -3,6 +3,7 @@ title: The Power of Written Standup
 subtitle: Frequently overlooked tool for distributed teams
 date: 2021-03-08
 author: Bobek
+category: work
 ---
 
 Written standup is a frequently overlooked tool for distributed teams. It lets people catch up easily if they missed a particular standup. It also produces a body of searchable and rich documents. In addition, it helps you see what you accomplished during the day and feel proud of yourself, which can be hard to do in knowledge jobs. It is best to treat written standup as your logbook. Filling it during the day removes the burden of remembering what you have done at the end of the day. As well as it allows for faster pickup by others.
