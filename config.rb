@@ -51,13 +51,6 @@ activate :blog do |blog|
   blog.generate_day_pages = false
   blog.generate_month_pages = false
   blog.generate_year_pages = false
-
-  blog.custom_collections = {
-    category: {
-      link: '/{category}.html',
-      template: '/category.html'
-    }
-  }
 end
 
 activate :livereload
