@@ -51,12 +51,11 @@
     <strong>More Posts...</strong>
   </a>
 </div>
-
 <hr/>
 
 <div class="col gap-3">
   <h1>Weekend Long Read Suggestions</h1>
-  <% page_articles('long-reads').reject { |a| a.data.unlisted }[0..10].each do |article| %>
+  <% page_articles('long-reads').reject { |a| a.data.unlisted }[0..2].each do |article| %>
     <a href="<%= article.url %>" class="row gap-2">
       <span class="faded date"><%= article.date.strftime('%b %e') %></span>
       <strong><%= article.title %></strong>
