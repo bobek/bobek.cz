@@ -90,6 +90,11 @@ helpers do
     html_doc
   end
 
+  def canonical_url(page)
+    dst_path = page.destination_path.gsub(/index\.html$/, '')
+    "https://www.bobek.cz/#{dst_path}"
+  end
+
   def propose_changes_url(src)
     project_root = Pathname.new(File.dirname(__FILE__))
     source_path = Pathname.new(src)
