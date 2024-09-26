@@ -2,27 +2,27 @@
 ---
 <p class="article"><strong>Antonín Král</strong> &mdash; Geek, maker and investor.</p>
 <p class="col gap-1 xl-row xl-gap-2 article top">
-  <span><a href="https://www.linkedin.com/in/kralant/">LinkedIn</a></span>
+  <span><a title="LinkedIN" href="https://www.linkedin.com/in/kralant/">LinkedIn</a></span>
   <span class="xl-only">&bull;</span>
-  <span><a href="https://github.com/bobek">GitHub</a></span>
+  <span><a title="GitHub" href="https://github.com/bobek">GitHub</a></span>
   <span class="xl-only">&bull;</span>
-  <span><a href="https://twitter.com/kralant">Twitter</a></span>
+  <span><a title="Twitter" href="https://twitter.com/kralant">Twitter</a></span>
   <span class="xl-only">&bull;</span>
-  <span><a rel="me" href="https://social.bobek.cz/@bobek">Mastodon</a></span>
+  <span><a title="Mastodon" rel="me" href="https://social.bobek.cz/@bobek">Mastodon</a></span>
   <span class="xl-only">&bull;</span>
-  <span><a href="mailto:hello@bobek.cz">hello@bobek.cz</a></span>
+  <span><a title="e-mail" href="mailto:hello@bobek.cz">hello@bobek.cz</a></span>
   <%# <span class="xl-only">&bull;</span>
   <span><a href="https://keybase.io/bobek">PGP Public</a></span> %>
   <span class="xl-only">&bull;</span>
-  <span><a href="/feed.xml">RSS Feed</a></span>
+  <span><a title="RSS Feed" href="/feed.xml">RSS Feed</a></span>
   <span class="xl-only">&bull;</span>
-  <span><a href="https://cal.com/bobek/sparring">Wanna talk?</a></span>
+  <span><a title="meeting booking" href="https://cal.com/bobek/sparring">Wanna talk?</a></span>
 </p>
 
 <hr/>
 
 <div class="article col gap-3 justify">
-  <h1>Bio</h1>
+  <h2>Bio</h2>
     <ul>
       <li>Worked at <b>CERN</b>, Brookhaven Nation Laboratory (<b>BNL</b>), <b>RIKEN</b> and received Ph.D. in applied mathematics.</li>
       <li>Co-founded <b>Recombee</b> -- Recommendation as a service startup.</li>
@@ -38,7 +38,7 @@
 <hr/>
 
 <div class="col gap-3">
-  <h1>Posts</h1>
+  <h2>Posts</h2>
   <% page_articles('blog').reject { |a| a.data.unlisted }[0..10].each do |article| %>
     <a href="<%= article.url %>" class="row gap-2">
       <span class="faded date"><%= article.date.strftime('%b %e') %></span>
@@ -54,7 +54,7 @@
 <hr/>
 
 <div class="col gap-3">
-  <h1>Weekend Long Read Suggestions</h1>
+  <h2>Weekend Long Read Suggestions</h2>
   <% page_articles('long-reads').reject { |a| a.data.unlisted }[0..2].each do |article| %>
     <a href="<%= article.url %>" class="row gap-2">
       <span class="faded date"><%= article.date.strftime('%b %e') %></span>
@@ -71,7 +71,7 @@
 <hr/>
 
 <div class="article col gap-3 justify">
-  <h1>Highlights</h1>
+  <h2>Highlights</h2>
     <ul>
       <li><a href="/jan-munz">Deník <strong>Jana Münze</strong></a><div class="faded">Unikátní pohled do života prvorepublikového chlapce z Příbrami. Jan neměl šanci jej dokončit.</div></li>
     </ul>
@@ -81,7 +81,7 @@
 
 <div class="article col gap-3 justify">
   <!-- <p><a href="https://tech.showmax.com"><strong>Showmax</strong></a> is a video streaming business.</p> -->
-  <h1>Publikace Jaroslavy Králové</h1>
+  <h2>Publikace Jaroslavy Králové</h2>
     <ul>
       <li><a href="/socialni-opora">Sociální opora</a></li>
       <li><a href="/vizitka-navstivenka-vyznamna-forma-komunikace">Vizitka / Navštívenka – významná forma komunikace</a></li>
@@ -98,7 +98,7 @@ pomáhajícího odborníka</a> (<a href="/static/BezmocaNadeje.pdf">PDF</a>)</li
 <hr>
 
 <div class="col gap-3">
-  <h1>Misc Notes</h1>
+  <h2>Misc Notes</h2>
   <% sitemap.resources.select {|r| r.destination_path =~ /^notes\//}.select {|r| r.data.published != false}.sort_by {|r| r.data.updated}.reverse.each do |resource| %>
     <a href="<%= resource.url %>" class="row gap-2">
       <span class="faded date"><%= resource.data.updated.strftime('%b %e') %></span>
