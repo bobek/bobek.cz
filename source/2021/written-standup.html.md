@@ -6,7 +6,9 @@ author: Bobek
 category: work
 ---
 
-Written standup is a frequently overlooked tool for distributed teams. It lets people catch up easily if they missed a particular standup. It also produces a body of searchable and rich documents. In addition, it helps you see what you accomplished during the day and feel proud of yourself, which can be hard to do in knowledge jobs. It is best to treat written standup as your logbook. Filling it during the day removes the burden of remembering what you have done at the end of the day. As well as it allows for faster pickup by others.
+Written standup is a simple tool that can significantly improve how distributed teams work. It's just what it sounds like: instead of meeting to talk, team members write down what they're doing. This has several benefits. It creates a searchable record of what everyone's working on. It helps people catch up if they miss a day. And it gives you a sense of accomplishment, which can be hard to get in knowledge work.
+
+The best way to do the written standup is to treat it like a log. Update it throughout the day as you work. This makes it easier to remember what you did, and helps your teammates stay current. Written standup increases visibility into what everyone's doing. It improves accountability by making clear what each person should be working on. And it enhances communication by giving people a place to share updates and ask questions.
 
 Here are some of the benefits of written standup:
 
