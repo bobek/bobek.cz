@@ -168,7 +168,7 @@ GEM
       ffi (~> 1.0)
     readingtime (0.4.0)
     redcarpet (3.6.0)
-    rexml (3.3.7)
+    rexml (3.3.9)
     rmagick (6.0.1)
       observer (~> 0.1)
       pkg-config (~> 1.4)
