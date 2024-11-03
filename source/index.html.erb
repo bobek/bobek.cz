@@ -71,23 +71,6 @@
 
 <hr/>
 
-<div class="col gap-3">
-  <h2>Weekend Long Read Suggestions</h2>
-  <% page_articles('long-reads').reject { |a| a.data.unlisted }[0..2].each do |article| %>
-    <a href="<%= article.url %>" class="row gap-2">
-      <span class="faded date"><%= article.date.strftime('%b %e') %></span>
-      <strong><%= article.title %></strong>
-      <div class="faded"><%= article.data.subtitle%></div>
-    </a>
-  <% end %>
-  <a href="/long-reads" class="row gap-2">
-    <span class="faded date">&nbsp;</span>
-    <strong>More Posts...</strong>
-  </a>
-</div>
-
-<hr/>
-
 <div class="article col gap-3 justify">
   <h2>Highlights</h2>
     <ul>
