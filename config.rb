@@ -52,6 +52,27 @@ activate :blog do |blog|
   blog.generate_year_pages = false
 end
 
+activate :blog do |blog|
+  blog.name = "til"
+  blog.prefix = "til"
+  blog.permalink = "{title}.html"
+  blog.sources = "{year}/{title}.html"
+  blog.layout = "layouts/post"
+  # blog.tag_template = "tag.html"
+  # blog.taglink = "{tag}/index.html"
+  # blog.calendar_template = "calendar.html"
+  blog.default_extension = ".md"
+
+  # Enable pagination
+  blog.paginate = true
+  blog.per_page = 12
+  blog.page_link = "page/{num}"
+
+  blog.generate_day_pages = false
+  blog.generate_month_pages = false
+  blog.generate_year_pages = false
+end
+
 activate :livereload
 
 helpers do

@@ -51,6 +51,24 @@
     <strong>More Posts...</strong>
   </a>
 </div>
+
+<hr/>
+
+<div class="col gap-3">
+  <h2>Antonin's TILs and short articles</h2>
+  <% page_articles('til').reject { |a| a.data.unlisted }[0..10].each do |article| %>
+    <a href="<%= article.url %>" class="row gap-2">
+      <span class="faded date"><%= article.date.strftime('%b %e') %></span>
+      <strong><%= article.title %></strong>
+      <div class="faded"><%= article.data.subtitle%></div>
+    </a>
+  <% end %>
+  <a href="/til" class="row gap-2">
+    <span class="faded date">&nbsp;</span>
+    <strong>More Posts...</strong>
+  </a>
+</div>
+
 <hr/>
 
 <div class="col gap-3">

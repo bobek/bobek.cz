@@ -1,0 +1,18 @@
+---
+---
+
+<h1>Antonin's TILs and short articles</h1>
+
+<div class="col gap-3">
+  <p class="faded"><%= page_articles('til').reject { |a| a.data.unlisted }.length %> posts across <%= page_articles('til').reject { |a| a.data.unlisted }.group_by {|a| a.date.strftime('%Y')}.length %> years</p>
+  <% page_articles('til').reject { |a| a.data.unlisted }.group_by {|a| a.date.strftime('%Y')}.each do |year, articles| %>
+    <h2><%= year %></h2>
+    <% articles.each do |article| %>
+      <a href="<%= article.url %>" class="row gap-2">
+        <span class="faded date"><%= article.date.strftime('%b %e') %></span>
+        <strong><%= article.title %></strong>
+        <div class="faded"><%= article.data.subtitle%></div>
+      </a>
+    <% end %>
+  <% end %>
+</div>
