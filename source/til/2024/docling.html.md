@@ -1,5 +1,6 @@
 ---
 title: Docling
+summary: Docling is a MIT licensed document parser, OCR and converter from IBM Deep Search Team. They provide simple CLI tool as well as Python bindings.
 category: til
 date: 2024-11-03
 tags: ["python", "ocr", "cv", "ml"]

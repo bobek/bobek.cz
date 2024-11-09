@@ -7,7 +7,9 @@
     <% if current_article %>
       <title><%= current_article.title %> &ndash; bobek.cz</title>
       <meta name="twitter:title" content="<%= current_article.title %> &ndash; bobek.cz">
-      <meta name="twitter:description" content="<%= current_article.title %> &ndash; bobek.cz">
+      <% if current_article.data.summary? %>
+      <meta name="twitter:description" content="<%= current_article.data.summary %>">
+      <% end %>
     <% elsif defined? category %>
       <title><%= category_longname category %> &ndash; bobek.cz</title>
       <meta name="twitter:title" content="<%= category_longname category %> &ndash; bobek.cz">
@@ -29,16 +31,20 @@
     <%#= stylesheet_link_tag 'theme' %>
     <%= feed_tag :atom, "/feed.xml", title: "Atom Feed" %>
 
-    <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@kralant">
     <meta name="twitter:creator" content="@kralant">
 
     <% if current_page.data.ogcover? %>
+      <meta name="twitter:card" content="summary_large_image">
       <meta property="og:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.ogcover)) %>" />
       <meta property="twitter:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.ogcover)) %>" />
     <% elsif current_page.data.cover? %>
+      <meta name="twitter:card" content="summary_large_image">
       <meta property="og:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.cover)) %>" />
       <meta property="twitter:image" content="<%= URI.join("https://www.bobek.cz", image_path(current_page.data.cover)) %>" />
+    <% else %>
+      <meta name="twitter:card" content="summary">
+      <meta property="twitter:image" content="<%= URI.join("https://www.bobek.cz", image_path('logo.svg')) %>" />
     <% end %>
   </head>
   <body>
