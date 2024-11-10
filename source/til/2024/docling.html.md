@@ -50,7 +50,7 @@ print(df)
 
 will produce the following output (same as the Markdown tables, as expected), as the table is extracted as pandas `DataFrame`:
 
-```shell
+```txt
                     CPU. Thread budget.Thread budget native backend.TTS  ... pypdfium backend.TTS pypdfium backend.Pages/s pypdfium backend.Mem
 0           Apple M3 Max                           4              177 s  ...                103 s                     2.18              2.56 GB
 1             (16 cores)                          16              167 s  ...                 92 s                     2.45              2.56 GB
