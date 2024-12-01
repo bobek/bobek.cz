@@ -1,5 +1,6 @@
 ---
 title: Written Narratives
+author: Colin Bryar and Bill Carr
 category: business
 date: 2023-04-04
 ---
