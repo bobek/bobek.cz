@@ -5,7 +5,7 @@ category: business
 date: 2023-04-04
 ---
 
-> This a shameless copy from the excellent [Working Backwards (Insights, stories, and secrets from inside Amazon)](https://www.workingbackwards.com).
+> This is a shameless copy from the excellent [Working Backwards (Insights, stories, and secrets from inside Amazon)](https://www.workingbackwards.com).
 
 # Dear PowerPoint: It’s Not You, It’s Us
 
